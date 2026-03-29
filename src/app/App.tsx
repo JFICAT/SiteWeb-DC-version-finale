@@ -70,7 +70,7 @@ function Navbar({ currentPage, onNavigate }: { currentPage?: string; onNavigate?
             className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 whitespace-nowrap cursor-pointer ${path === "/ia-conforme" || path === "/fabrik01" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
               }`}
           >
-            Votre IA Conforme
+            Intelligence artificielle
           </Link>
           {/* Dropdown submenu */}
           <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
