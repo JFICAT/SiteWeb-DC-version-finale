@@ -4,7 +4,7 @@ import {
   MessageSquare, Layout, ShieldCheck, 
   Database, Zap, Lock, Globe
 } from 'lucide-react';
-import imgLogicielsUS from '../../assets/logiciels-US.jpg';
+import imgLogicielsUS from '../../assets/logiciels-US.png';
 
 export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: string) => void }) {
   return (
