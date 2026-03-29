@@ -124,7 +124,7 @@ export default function IAExpertiseCarousel({ onNavigate }: IAExpertiseCarouselP
             <p className="leading-[20px]">Nos Services</p>
           </div>
           <h2 className="font-['Manrope:Bold',sans-serif] text-[36px] text-[#0A192F] text-center">
-            Expertise de Pointe en IA
+            Conformité et sécurisation de vos IA
           </h2>
         </div>
 
