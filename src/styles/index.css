@@ -1,0 +1,54 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+@keyframes vertical-scroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes anti-gravity-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+@keyframes horizontal-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-horizontal-scroll {
+  animation: horizontal-scroll 40s linear infinite;
+}
+
+.animate-vertical-scroll {
+  animation: vertical-scroll 25s linear infinite;
+}
+
+.animate-float {
+  animation: anti-gravity-float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed-1 {
+  animation: anti-gravity-float 7s ease-in-out infinite 1s;
+}
+
+.animate-float-delayed-2 {
+  animation: anti-gravity-float 5s ease-in-out infinite 2s;
+}
+
+.animate-float-delayed-3 {
+  animation: anti-gravity-float 8s ease-in-out infinite 0.5s;
+}
