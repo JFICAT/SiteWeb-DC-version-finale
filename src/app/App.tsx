@@ -76,6 +76,12 @@ function Navbar({ currentPage, onNavigate }: { currentPage?: string; onNavigate?
           <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
             <div className="bg-white rounded-lg shadow-lg border border-[rgba(0,71,186,0.1)] py-2 min-w-[200px]">
               <Link
+                to="/ia-conforme"
+                className="block w-full text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
+              >
+                Conformité des IA
+              </Link>
+              <Link
                 to="/fabrik01"
                 className="block w-full text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
               >
