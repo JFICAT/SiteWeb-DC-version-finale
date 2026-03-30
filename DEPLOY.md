@@ -34,8 +34,8 @@ L'application est entièrement dockerisée avec deux conteneurs :
 
 | Conteneur | Rôle | Réseaux |
 |---|---|---|
-| `dataconforme-front` | nginx — sert le SPA React et proxyfie `/api/*` vers l'API | `testapp` (Caddy) + `internal` |
-| `dataconforme-api` | Node.js — `POST /api/contact`, envoi SMTP Brevo | `internal` uniquement |
+| `siteweb-dc-version-finale-front` | nginx — sert le SPA React et proxyfie `/api/*` vers l'API | `testapp` (Caddy) + `internal` |
+| `siteweb-dc-version-finale-api` | Node.js — `POST /api/contact`, envoi SMTP Brevo | `internal` uniquement |
 
 ### Architecture réseau
 
@@ -75,7 +75,7 @@ Dans votre `Caddyfile`, pointer vers le conteneur `dataconforme-front` :
 
 ```caddy
 dataconforme.com {
-    reverse_proxy dataconforme-front:80
+    reverse_proxy siteweb-dc-version-finale-front:80
 }
 ```
 
