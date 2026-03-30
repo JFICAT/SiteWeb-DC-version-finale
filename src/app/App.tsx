@@ -325,15 +325,8 @@ export default function App() {
 
   // Global Scroll Animation Observer
   useEffect(() => {
-    if (location.hash) {
-      const id = location.hash.replace('#', '');
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        window.scrollTo(0, 0);
-      }
-    } else {
+    // Basic scroll to top if NO hash is present
+    if (!location.hash) {
       window.scrollTo(0, 0);
     }
 
@@ -371,7 +364,16 @@ export default function App() {
           observer.observe(el);
         }
       });
-    }, 100);
+
+      // Handle hash scroll AFTER initial mount and tiny delay
+      if (location.hash) {
+        const id = location.hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }, 150);
 
     return () => {
       clearTimeout(timeoutId);
