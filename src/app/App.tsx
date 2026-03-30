@@ -347,10 +347,20 @@ export default function App() {
       const elements = document.querySelectorAll(
         '[data-name*="Section"], [data-name*="Card"], [data-name*="Grid"], [data-name*="Container"]'
       );
+      
+      const hashId = location.hash ? location.hash.replace('#', '') : null;
+
       elements.forEach((el) => {
         const hasStaticOpacity = Array.from(el.classList).some(
           (c) => c.startsWith("opacity-") && c !== "opacity-0" && c !== "opacity-100"
         );
+        
+        // Skip hidden classes if this is the target of the hash
+        if (hashId && (el.id === hashId || el.querySelector(`#${hashId}`))) {
+          el.classList.add("opacity-100", "translate-y-0");
+          return;
+        }
+
         if (!el.classList.contains("scroll-animated") && !hasStaticOpacity) {
           // Add Tailwind transition classes. Using transforming vars prevents overriding layout transforms.
           el.classList.add(
@@ -366,11 +376,13 @@ export default function App() {
       });
 
       // Handle hash scroll AFTER initial mount and tiny delay
-      if (location.hash) {
-        const id = location.hash.replace('#', '');
-        const element = document.getElementById(id);
+      if (hashId) {
+        const element = document.getElementById(hashId);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
+          // Ensure it's visible even if it didn't match the selector above
+          element.classList.remove("opacity-0", "translate-y-10");
+          element.classList.add("opacity-100", "translate-y-0");
         }
       }
     }, 150);
