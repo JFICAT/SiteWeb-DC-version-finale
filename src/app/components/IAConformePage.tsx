@@ -16,10 +16,6 @@ export default function IAConformePage({ onNavigate }: { onNavigate: (page: stri
           [data-name="Hero Section"] > .absolute.inset-0.opacity-10 {
             display: none !important;
           }
-          [data-name="Hero Section"] {
-            top: 0 !important;
-            padding-top: 64px !important;
-          }
         `}</style>
         <Body onNavigate={onNavigate} />
       </div>
