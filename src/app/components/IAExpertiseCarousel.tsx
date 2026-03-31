@@ -110,6 +110,7 @@ export default function IAExpertiseCarousel({ onNavigate }: IAExpertiseCarouselP
 
   return (
     <section
+      id="ia-services"
       className="w-full bg-[#f8fafc] pt-12 pb-24 relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

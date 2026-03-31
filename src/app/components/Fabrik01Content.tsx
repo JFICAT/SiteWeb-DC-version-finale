@@ -4,6 +4,7 @@ import {
   MessageSquare, Layout, ShieldCheck, 
   Database, Zap, Lock, Globe
 } from 'lucide-react';
+import fabrik01Logo from '../../assets/fabrik01-noir-transpa.png';
 import imgLogicielsUS from '../../assets/logiciels-US.png';
 
 export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: string) => void }) {
@@ -11,14 +12,19 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
     <div className="w-full bg-white font-['Inter:Regular',sans-serif] text-[#1A2340]">
       
       {/* Hero Section */}
-      <section className="relative pt-16 pb-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-gradient-to-br from-[#001E40] to-[#1D638F]">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <div className="flex-1 text-white z-10">
-            <h1 className="text-4xl md:text-6xl font-['Manrope:Extra_Bold',sans-serif] font-extrabold mb-6 leading-tight">
+      <section className="relative pt-20 pb-28 px-6 md:px-12 lg:px-24 overflow-hidden bg-white">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
+          <div className="flex-1 text-[#0A192F] z-10">
+            <img 
+              src={fabrik01Logo} 
+              alt="Fabrik01 Logo" 
+              className="h-16 w-auto mb-8 object-contain"
+            />
+            <h1 className="text-4xl md:text-6xl font-['Manrope:Extra_Bold',sans-serif] font-extrabold mb-6 leading-[1.1] tracking-tight">
               Pilotage IA <br />
-              <span className="text-[#90CDFE]">sur-mesure & sécurisé</span>
+              <span className="text-[#00A9C1]">sur-mesure & sécurisé</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl font-['Manrope:Bold',sans-serif] font-bold mb-8 text-[#90CDFE]/90">
+            <h2 className="text-2xl md:text-3xl font-['Manrope:Bold',sans-serif] font-bold mb-8 text-[#0047BA]">
               Transformez votre organisation
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -26,34 +32,37 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
                 href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg text-center"
+                className="bg-[#0047BA] hover:bg-[#00358E] text-white px-10 py-4 rounded-lg font-['Manrope:Bold',sans-serif] font-bold transition-all shadow-md text-center text-lg"
               >
                 Prenez-RDV
               </a>
             </div>
-            <p className="text-lg text-[#CBD5E1] max-w-xl leading-relaxed">
+            <p className="text-[18px] font-['Inter:Regular',sans-serif] text-[#3d494c] max-w-xl leading-relaxed">
               De l'audit stratégique au développement d'applications d'IA sur-mesure, 
               nous forgeons vos outils IA avec le moins de dépendances possibles aux solutions externes et étrangères.
             </p>
-            <p className="mt-4 font-semibold text-[#90CDFE]">Solutions françaises et souveraines</p>
+            <p className="mt-6 font-['Manrope:Bold',sans-serif] font-bold text-[#00A9C1] flex items-center gap-2">
+              <span className="w-8 h-[2px] bg-[#00A9C1]"></span>
+              Solutions françaises et souveraines
+            </p>
           </div>
-          <div className="flex-1 relative">
+          <div className="flex-1 relative translate-x-12 lg:translate-x-20">
             <img 
               src="https://www.fabrik01.fr/images/ImageUne.png" 
               alt="Pilotage IA" 
-              className="w-full h-auto rounded-2xl relative z-10"
+              className="w-[120%] h-auto max-w-none relative z-10 border-none"
             />
           </div>
         </div>
       </section>
 
       {/* Notre Méthode Section */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-gradient-to-br from-[#001E40] to-[#1D638F]">
         <div className="max-w-7xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-['Manrope:Extra_Bold',sans-serif] font-extrabold text-[#1A2340] mb-6">
+          <h2 className="text-4xl md:text-5xl font-['Manrope:Extra_Bold',sans-serif] font-extrabold text-white mb-6">
             Notre Méthode
           </h2>
-          <p className="text-lg text-gray-500 max-w-3xl mx-auto">
+          <p className="text-lg text-white/70 max-w-3xl mx-auto">
             Une approche structurée en 3 étapes pour transformer votre organisation en déployant de l'IA et des automatisations.
           </p>
         </div>
