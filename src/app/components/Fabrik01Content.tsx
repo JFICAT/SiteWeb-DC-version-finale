@@ -24,7 +24,7 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
               Pilotage IA <br />
               <span className="text-[#00A9C1]">sur-mesure & sécurisé</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl font-['Manrope:Bold',sans-serif] font-bold mb-8 text-[#0047BA]">
+            <h2 className="text-2xl md:text-3xl font-['Manrope:Bold',sans-serif] font-bold mb-8 text-[#0A192F]">
               Transformez votre organisation
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -32,7 +32,7 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
                 href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#0047BA] hover:bg-[#00358E] text-white px-10 py-4 rounded-lg font-['Manrope:Bold',sans-serif] font-bold transition-all shadow-md text-center text-lg"
+                className="bg-[#0A192F] hover:bg-black text-white px-10 py-4 rounded-lg font-['Manrope:Bold',sans-serif] font-bold transition-all shadow-md text-center text-lg"
               >
                 Prenez-RDV
               </a>
@@ -50,7 +50,7 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
             <img 
               src="https://www.fabrik01.fr/images/ImageUne.png" 
               alt="Pilotage IA" 
-              className="w-[120%] h-auto max-w-none relative z-10 border-none"
+              className="w-[140%] h-auto max-w-none relative z-10 border-none"
             />
           </div>
         </div>
