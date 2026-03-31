@@ -15,9 +15,9 @@ function Container() {
 
 function Background() {
   return (
-    <div className="bg-[#90cdfe] content-stretch flex items-start px-[16px] py-[4px] relative rounded-[12px] shrink-0" data-name="Background">
-      <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-[16px] justify-center leading-[0] not-italic relative shrink-0 text-[#004b71] text-[12px] tracking-[1.2px] uppercase w-[139.19px]">
-        <p className="leading-[16px]">{`Gouvernance & IA`}</p>
+    <div className="bg-[#90cdfe] inline-flex items-center justify-center px-4 py-2 relative rounded-[12px] mb-4" data-name="Background">
+      <div className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#004b71] text-[12px] md:text-[14px] tracking-[1.2px] uppercase whitespace-nowrap">
+        Gouvernance & IA
       </div>
     </div>
   );
@@ -25,12 +25,9 @@ function Background() {
 
 function Heading() {
   return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 1">
-      <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] justify-center leading-[60px] not-italic relative shrink-0 text-[60px] text-white tracking-[-1.5px] w-full">
-        <p className="mb-0">IA Conforme :</p>
-        <p className="mb-0">Maîtrisez</p>
-        <p className="mb-0">{`l'Intelligence`}</p>
-        <p>Artificielle</p>
+    <div className="flex flex-col items-start relative w-full" data-name="Heading 1">
+      <div className="font-['Manrope:Extra_Bold',sans-serif] leading-[1.1] text-white tracking-[-1.0px] w-full text-[40px] md:text-[60px]">
+        <h1 className="m-0 break-words whitespace-normal text-balance">IA Conforme : Maîtrisez l'Intelligence Artificielle</h1>
       </div>
     </div>
   );
@@ -38,11 +35,11 @@ function Heading() {
 
 function Container3() {
   return (
-    <div className="content-stretch flex flex-col items-start max-w-[576px] relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[32.5px] not-italic relative shrink-0 text-[#cbe6ff] text-[20px] w-full">
-        <p className="mb-0">{`Naviguez sereinement dans l'EU AI Act. Assurez un`}</p>
-        <p className="mb-0">déploiement sécurisé, éthique et conforme de vos systèmes</p>
-        <p>{`d'intelligence artificielle.`}</p>
+    <div className="flex flex-col items-start w-full relative max-w-[576px]" data-name="Container">
+      <div className="font-['Inter:Regular',sans-serif] font-normal leading-[1.6] text-[#cbe6ff] text-[18px] md:text-[20px] w-full">
+        <p className="m-0 break-words whitespace-normal text-balance">
+          Naviguez sereinement dans l'EU AI Act. Assurez un déploiement sécurisé, éthique et conforme de vos systèmes d'intelligence artificielle.
+        </p>
       </div>
     </div>
   );
@@ -95,7 +92,7 @@ function Button1() {
 
 function Container4() {
   return (
-    <div className="content-stretch flex gap-[16px] items-start pt-[16px] relative shrink-0 w-full" data-name="Container">
+    <div className="flex flex-col sm:flex-row gap-[16px] items-start pt-[16px] relative w-full" data-name="Container">
       <Button />
       <Button1 />
     </div>
@@ -104,7 +101,8 @@ function Container4() {
 
 function Container2() {
   return (
-    <div className="col-1 content-stretch flex flex-col gap-[32px] items-start justify-self-stretch relative row-1 self-center shrink-0" data-name="Container">
+    <div className="flex flex-col gap-[32px] items-start relative w-full" data-name="Container">
+      <Background />
       <Heading />
       <Container3 />
       <Container4 />
@@ -251,16 +249,20 @@ function OverlayBorderOverlayBlur() {
 
 function Container1() {
   return (
-    <div className="gap-x-[64px] gap-y-[64px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[_535.50px] max-w-[1280px] relative shrink-0 w-full" data-name="Container">
-      <Container2 />
-      <OverlayBorderOverlayBlur />
+    <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-[64px] max-w-[1280px] w-full relative z-10" data-name="Container">
+      <div className="w-full lg:w-1/2 flex justify-start relative">
+        <Container2 />
+      </div>
+      <div className="w-full lg:w-1/2 flex justify-center items-center relative">
+        <OverlayBorderOverlayBlur />
+      </div>
     </div>
   );
 }
 
 function HeroSection() {
   return (
-    <div className="absolute content-stretch flex flex-col items-center left-0 overflow-clip px-[32px] py-[128px] right-0 top-[80px]" data-name="Hero Section" style={{ backgroundImage: "linear-gradient(135deg, rgb(0, 30, 64) 0%, rgb(29, 99, 143) 100%)" }}>
+    <div className="relative flex flex-col items-center w-full px-6 md:px-[32px] py-16 md:py-[128px] overflow-hidden" data-name="Hero Section" style={{ backgroundImage: "linear-gradient(135deg, rgb(0, 30, 64) 0%, rgb(29, 99, 143) 100%)" }}>
       <Container />
       <Container1 />
     </div>
@@ -1343,7 +1345,7 @@ function Container22() {
 
 function SectionServicesGrid({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
-    <div className="absolute content-stretch flex flex-col items-center left-0 right-0 top-[680px]" data-name="Section - Services Grid">
+    <div className="relative flex flex-col items-center w-full" data-name="Section - Services Grid">
       <IAExpertiseCarousel onNavigate={onNavigate} />
     </div>
   );
@@ -1613,7 +1615,7 @@ function Container40() {
 
 function SovereigntySection() {
   return (
-    <div className="absolute bg-[#001e40] content-stretch flex flex-col items-center left-[32px] overflow-clip px-[80px] py-[100px] right-[32px] rounded-[40px] top-[1650px]" data-name="Sovereignty & Ethics Section">
+    <div className="relative bg-[#001e40] flex flex-col items-center w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] mx-auto overflow-clip px-6 md:px-[80px] py-16 md:py-[100px] rounded-[24px] md:rounded-[40px] shadow-xl" data-name="Sovereignty & Ethics Section">
       <div className="absolute bg-[rgba(29,99,143,0.2)] blur-[50px] right-[-80px] rounded-[12px] size-[320px] top-[-80px]" data-name="Overlay+Blur" />
       <div className="absolute bg-[rgba(141,253,82,0.1)] blur-[50px] bottom-[-80px] left-[-80px] rounded-[12px] size-[320px]" data-name="Overlay+Blur" />
       <div className="max-w-[1000px] w-full relative z-10">
@@ -1623,73 +1625,35 @@ function SovereigntySection() {
   );
 }
 
-function Heading12() {
-  return (
-    <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Heading 2">
-      <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] h-[40px] justify-center leading-[0] not-italic relative shrink-0 text-[#001e40] text-[36px] text-center w-[917.56px]">
-        <p className="leading-[40px]">{`Prenez une longueur d'avance sur la réglementation`}</p>
-      </div>
-    </div>
-  );
-}
-
-function Container55() {
-  return (
-    <div className="content-stretch flex flex-col items-center max-w-[672px] relative shrink-0 w-[672px]" data-name="Container">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-[56px] justify-center leading-[28px] not-italic relative shrink-0 text-[#43474f] text-[18px] text-center w-[600.64px]">
-        <p className="mb-0">Ne laissez pas la conformité freiner votre innovation. Nos experts vous</p>
-        <p>{`accompagnent de l'audit à l'exploitation.`}</p>
-      </div>
-    </div>
-  );
-}
-
-function Button4({ onNavigate }: { onNavigate?: (page: string) => void }) {
-  return (
-    <button 
-      onClick={() => onNavigate && onNavigate('contact')}
-      className="bg-[#001e40] content-stretch flex flex-col items-center justify-center px-[48px] py-[20px] relative rounded-[12px] shrink-0 no-underline hover:opacity-90 transition-opacity cursor-pointer border-none" 
-      data-name="Button"
-    >
-      <div className="absolute bg-[rgba(255,255,255,0)] inset-0 rounded-[12px] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)]" data-name="Button:shadow" />
-      <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] h-[28px] justify-center leading-[0] not-italic relative shrink-0 text-[20px] text-center text-white w-[221.38px]">
-        <p className="leading-[28px]">Contacter un Expert</p>
-      </div>
-    </button>
-  );
-}
-
-function Button5() {
-  return (
-    <div className="bg-[#dee8ff] content-stretch flex flex-col items-center justify-center px-[48px] py-[20px] relative rounded-[12px] shrink-0" data-name="Button">
-      <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] h-[28px] justify-center leading-[0] not-italic relative shrink-0 text-[#001e40] text-[20px] text-center w-[122.19px]">
-        <p className="leading-[28px]">Prendre RDV</p>
-      </div>
-    </div>
-  );
-}
-
-function Container56({ onNavigate }: { onNavigate?: (page: string) => void }) {
-  return (
-    <div className="content-stretch flex gap-[15.99px] items-start justify-center pt-[24px] relative shrink-0 w-full" data-name="Container">
-      <Button4 onNavigate={onNavigate} />
-    </div>
-  );
-}
-
 function CtaSection({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
-    <div className="absolute bg-[#f9f9ff] content-stretch flex flex-col gap-[24px] items-center left-0 px-[32px] py-[96px] right-0 top-[2250px]" data-name="CTA Section">
-      <Heading12 />
-      <Container55 />
-      <Container56 onNavigate={onNavigate} />
+    <div className="relative bg-[#f9f9ff] flex flex-col gap-8 items-center w-full px-6 md:px-[32px] py-16 md:py-[96px]" data-name="CTA Section">
+      <div className="flex flex-col items-center w-full max-w-[920px]">
+        <h2 className="m-0 font-['Manrope:Extra_Bold',sans-serif] text-[#001e40] text-[28px] md:text-[36px] text-center leading-[1.2] text-balance mb-4">
+          Prenez une longueur d'avance sur la réglementation
+        </h2>
+        <p className="m-0 font-['Inter:Regular',sans-serif] text-[#43474f] text-[16px] md:text-[18px] text-center leading-[1.5] text-balance max-w-[670px]">
+          Ne laissez pas la conformité freiner votre innovation. Nos experts vous accompagnent de l'audit à l'exploitation.
+        </p>
+      </div>
+      
+      <div className="flex justify-center w-full">
+        <button 
+          onClick={() => onNavigate && onNavigate('contact')}
+          className="bg-[#001e40] flex items-center justify-center px-[48px] py-[20px] rounded-[12px] no-underline hover:opacity-90 transition-opacity cursor-pointer border-none shadow-xl" 
+        >
+          <span className="font-['Manrope:Extra_Bold',sans-serif] text-[18px] md:text-[20px] text-center text-white">
+            Contacter un Expert
+          </span>
+        </button>
+      </div>
     </div>
   );
 }
 
 function Main({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
-    <div className="h-[2700px] relative shrink-0 w-full" data-name="Main">
+    <div className="flex flex-col gap-12 md:gap-24 relative w-full overflow-hidden pb-20" data-name="Main">
       <HeroSection />
       <SectionServicesGrid onNavigate={onNavigate} />
       <SovereigntySection />
