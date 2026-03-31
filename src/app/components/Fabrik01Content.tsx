@@ -46,7 +46,7 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
               Solutions françaises et souveraines
             </p>
           </div>
-          <div className="flex-1 relative">
+          <div className="flex-1 relative -translate-x-12 lg:-translate-x-24">
             <img 
               src="https://www.fabrik01.fr/images/ImageUne.png" 
               alt="Pilotage IA" 
