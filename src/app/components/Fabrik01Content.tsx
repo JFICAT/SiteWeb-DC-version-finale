@@ -227,12 +227,14 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
                     >
                         Prenez RDV <ArrowRight size={18} />
                     </a>
-                    <button 
-                        onClick={() => onNavigate('contact')}
-                        className="border border-white/20 hover:border-white/40 text-white px-10 py-4 rounded-xl font-bold transition-all"
+                    <a 
+                        href="https://www.fabrik01.fr/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="border border-white/20 hover:border-white/40 text-white px-10 py-4 rounded-xl font-bold transition-all flex items-center justify-center"
                     >
                         En savoir plus sur Fabrik01
-                    </button>
+                    </a>
                 </div>
             </div>
             
