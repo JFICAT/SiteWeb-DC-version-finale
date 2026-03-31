@@ -11,14 +11,14 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
     <div className="w-full bg-white font-['Inter:Regular',sans-serif] text-[#1A2340]">
       
       {/* Hero Section */}
-      <section className="relative pt-16 pb-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-gradient-to-br from-[#001E40] to-[#1D638F]">
+      <section className="relative pt-16 pb-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <div className="flex-1 text-white z-10">
+          <div className="flex-1 text-[#1A2340] z-10">
             <h1 className="text-4xl md:text-6xl font-['Manrope:Extra_Bold',sans-serif] font-extrabold mb-6 leading-tight">
               Pilotage IA <br />
-              <span className="text-[#90CDFE]">sur-mesure & sécurisé</span>
+              <span className="text-[#2563EB]">sur-mesure & sécurisé</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl font-['Manrope:Bold',sans-serif] font-bold mb-8 text-[#90CDFE]/90">
+            <h2 className="text-2xl md:text-3xl font-['Manrope:Bold',sans-serif] font-bold mb-8 text-[#2563EB]/90">
               Transformez votre organisation
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -31,29 +31,29 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
                 Prenez-RDV
               </a>
             </div>
-            <p className="text-lg text-[#CBD5E1] max-w-xl leading-relaxed">
+            <p className="text-lg text-gray-600 max-w-xl leading-relaxed">
               De l'audit stratégique au développement d'applications d'IA sur-mesure, 
               nous forgeons vos outils IA avec le moins de dépendances possibles aux solutions externes et étrangères.
             </p>
-            <p className="mt-4 font-semibold text-[#90CDFE]">Solutions françaises et souveraines</p>
+            <p className="mt-4 font-semibold text-[#2563EB]">Solutions françaises et souveraines</p>
           </div>
           <div className="flex-1 relative">
             <img 
               src="https://www.fabrik01.fr/images/ImageUne.png" 
               alt="Pilotage IA" 
-              className="w-full h-auto rounded-2xl relative z-10"
+              className="w-full h-auto rounded-2xl relative z-10 shadow-2xl"
             />
           </div>
         </div>
       </section>
 
       {/* Notre Méthode Section */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-gradient-to-br from-[#001E40] to-[#1D638F]">
         <div className="max-w-7xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-['Manrope:Extra_Bold',sans-serif] font-extrabold text-[#1A2340] mb-6">
+          <h2 className="text-4xl md:text-5xl font-['Manrope:Extra_Bold',sans-serif] font-extrabold text-white mb-6">
             Notre Méthode
           </h2>
-          <p className="text-lg text-gray-500 max-w-3xl mx-auto">
+          <p className="text-lg text-white/70 max-w-3xl mx-auto">
             Une approche structurée en 3 étapes pour transformer votre organisation en déployant de l'IA et des automatisations.
           </p>
         </div>
