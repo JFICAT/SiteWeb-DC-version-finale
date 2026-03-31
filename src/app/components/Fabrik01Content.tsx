@@ -12,9 +12,9 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
     <div className="w-full bg-white font-['Inter:Regular',sans-serif] text-[#1A2340]">
       
       {/* Hero Section */}
-      <section className="relative pt-20 pb-28 px-6 md:px-12 lg:px-24 overflow-hidden bg-white">
+      <section className="relative pt-12 pb-16 px-6 md:px-12 lg:px-24 overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
-          <div className="flex-1 text-[#0A192F] z-10">
+          <div className="flex-1 text-[#0A192F] z-10 lg:pr-32">
             <img 
               src={fabrik01Logo} 
               alt="Fabrik01 Logo" 
@@ -24,7 +24,7 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
               Pilotage IA <br />
               <span className="text-[#00A9C1]">sur-mesure & sécurisé</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl font-['Manrope:Bold',sans-serif] font-bold mb-8 text-[#0047BA]">
+            <h2 className="text-2xl md:text-3xl font-['Manrope:Bold',sans-serif] font-bold mb-8 text-[#0A192F]">
               Transformez votre organisation
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -32,7 +32,7 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
                 href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#0047BA] hover:bg-[#00358E] text-white px-10 py-4 rounded-lg font-['Manrope:Bold',sans-serif] font-bold transition-all shadow-md text-center text-lg"
+                className="bg-[#0A192F] hover:bg-black text-white px-10 py-4 rounded-lg font-['Manrope:Bold',sans-serif] font-bold transition-all shadow-md text-center text-lg"
               >
                 Prenez-RDV
               </a>
@@ -46,11 +46,11 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
               Solutions françaises et souveraines
             </p>
           </div>
-          <div className="flex-1 relative translate-x-12 lg:translate-x-20">
+          <div className="flex-1 relative -translate-x-40 -translate-y-12 lg:-translate-x-80 lg:-translate-y-24">
             <img 
               src="https://www.fabrik01.fr/images/ImageUne.png" 
               alt="Pilotage IA" 
-              className="w-[120%] h-auto max-w-none relative z-10 border-none"
+              className="w-[140%] h-auto max-w-none relative z-10 border-none"
             />
           </div>
         </div>
@@ -227,12 +227,14 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
                     >
                         Prenez RDV <ArrowRight size={18} />
                     </a>
-                    <button 
-                        onClick={() => onNavigate('contact')}
-                        className="border border-white/20 hover:border-white/40 text-white px-10 py-4 rounded-xl font-bold transition-all"
+                    <a 
+                        href="https://www.fabrik01.fr/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="border border-white/20 hover:border-white/40 text-white px-10 py-4 rounded-xl font-bold transition-all flex items-center justify-center"
                     >
-                        Contactez-nous
-                    </button>
+                        En savoir plus sur Fabrik01
+                    </a>
                 </div>
             </div>
             

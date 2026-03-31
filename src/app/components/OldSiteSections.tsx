@@ -16,7 +16,7 @@ export function SectionRGPD() {
   ];
 
   return (
-    <div id="rgpd-cybersec" className="w-full py-[64px] bg-white relative" data-name="Section - RGPD Features">
+    <div id="rgpd-cybersec" className="w-full py-[64px] bg-white relative scroll-mt-32" data-name="Section - RGPD Features">
       <div className="max-w-[1280px] mx-auto px-[32px] relative z-10">
         <div className="text-center mb-[48px] md:mb-[80px]">
           <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[#0A192F] text-[36px] md:text-[48px] leading-tight tracking-tight mb-[24px]">
@@ -126,7 +126,7 @@ export function SectionOffres() {
   ];
 
   return (
-    <div id="offres-pricing" className="w-full py-[64px] bg-[#f5f7ff]" data-name="Section - Offers Pricing">
+    <div id="offres-pricing" className="w-full py-[64px] bg-[#f5f7ff] scroll-mt-32" data-name="Section - Offers Pricing">
       <div className="max-w-[1280px] mx-auto px-[32px]">
         <div className="text-center mb-[40px] md:mb-[56px]">
           <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[36px] md:text-[48px] text-[#0A192F] leading-tight tracking-tight mb-[16px]">
@@ -254,7 +254,7 @@ export function SectionOffres() {
 
 export function SectionEcosystem() {
   return (
-    <div id="pilotage-conformite" className="w-full py-[100px] bg-white relative overflow-hidden" data-name="Section - Ecosystem">
+    <div id="pilotage-conformite" className="w-full py-[100px] bg-white relative overflow-hidden scroll-mt-32" data-name="Section - Ecosystem">
       <div className="max-w-[1280px] mx-auto px-[32px]">
         <div className="text-center mb-[64px]">
           <div className="inline-block px-[16px] py-[6px] rounded-full bg-[#E6F6F9] text-[#00A9C1] font-['Inter:Semi_Bold',sans-serif] text-[14px] mb-[20px]">
