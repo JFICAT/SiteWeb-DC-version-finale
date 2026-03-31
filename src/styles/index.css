@@ -2,6 +2,15 @@
 @import './tailwind.css';
 @import './theme.css';
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure sections have enough margin when scrolled to via hash links */
+[id] {
+  scroll-margin-top: 128px;
+}
+
 @keyframes vertical-scroll {
   from {
     transform: translateY(0);

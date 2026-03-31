@@ -14,7 +14,7 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
       {/* Hero Section */}
       <section className="relative pt-12 pb-16 px-6 md:px-12 lg:px-24 overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
-          <div className="flex-1 text-[#0A192F] z-10">
+          <div className="flex-1 text-[#0A192F] z-10 lg:pr-32">
             <img 
               src={fabrik01Logo} 
               alt="Fabrik01 Logo" 
@@ -46,7 +46,7 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
               Solutions françaises et souveraines
             </p>
           </div>
-          <div className="flex-1 relative -translate-x-12 lg:-translate-x-24">
+          <div className="flex-1 relative -translate-x-40 -translate-y-12 lg:-translate-x-80 lg:-translate-y-24">
             <img 
               src="https://www.fabrik01.fr/images/ImageUne.png" 
               alt="Pilotage IA" 
