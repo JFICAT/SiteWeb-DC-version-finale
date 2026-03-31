@@ -14,12 +14,83 @@ export default function NewsPage({ onNavigate }: { onNavigate?: (page: string) =
     script.async = true;
     script.src = `https://cdn.curator.io/published/${FEED_ID}.js`;
 
+    // Fonction pour traiter les publications
+    const processPosts = () => {
+      const posts = document.querySelectorAll('.crt-post:not(.processed)');
+      posts.forEach(post => {
+        const textElem = post.querySelector('.crt-post-text') as HTMLElement;
+        if (!textElem) return;
+
+        // On évite de traiter si le texte est déjà court
+        const originalHTML = textElem.innerHTML;
+        const text = textElem.innerText.trim();
+        
+        // Détection des 2 premières phrases par les points "."
+        let count = 0;
+        let splitIndex = -1;
+        for (let i = 0; i < text.length; i++) {
+          if (text[i] === '.') {
+            count++;
+            if (count === 2) {
+              splitIndex = i;
+              break;
+            }
+          }
+        }
+
+        // Si on a au moins 2 phrases et qu'il reste du texte significatif après
+        if (splitIndex !== -1 && splitIndex < text.length - 15) {
+          const shortText = text.substring(0, splitIndex + 1);
+          
+          // On sauvegarde le contenu initial
+          textElem.dataset.fullHtml = originalHTML;
+          textElem.dataset.shortText = shortText;
+          
+          // Initialement réduit
+          textElem.innerHTML = shortText;
+          
+          const btn = document.createElement('button');
+          btn.className = 'read-more-btn';
+          btn.innerText = 'Lire plus';
+          btn.style.marginTop = '8px';
+          
+          btn.onclick = (e) => {
+            e.preventDefault();
+            e.stopPropagation(); // Empêche l'ouverture de la modal Curator
+            const isCollapsed = btn.innerText === 'Lire plus';
+            if (isCollapsed) {
+              textElem.innerHTML = textElem.dataset.fullHtml || '';
+              btn.innerText = 'Lire moins';
+            } else {
+              textElem.innerHTML = textElem.dataset.shortText || '';
+              btn.innerText = 'Lire plus';
+            }
+          };
+
+          // Insérer le bouton après le texte
+          textElem.after(btn);
+        }
+        
+        post.classList.add('processed');
+      });
+    };
+
+    // Observer pour détecter l'arrivée de nouvelles publications du widget
+    const observer = new MutationObserver(() => {
+      processPosts();
+    });
+
+    const targetNode = document.getElementById('curator-feed-default-feed-layout');
+    if (targetNode) {
+      observer.observe(targetNode, { childList: true, subtree: true });
+    }
+
     // On l'ajoute au body
     document.body.appendChild(script);
 
     return () => {
-      // Nettoyage si on quitte la page
       document.body.removeChild(script);
+      observer.disconnect();
     };
   }, [FEED_ID]);
 
@@ -102,13 +173,40 @@ export default function NewsPage({ onNavigate }: { onNavigate?: (page: string) =
           margin-bottom: 2px !important;
         }
 
-        /* Body text styling */
+      /* Body text styling */
         .crt-post-text {
           font-family: 'Inter', sans-serif !important;
           line-height: 1.6 !important;
           color: #4B5563 !important;
           font-size: 15px !important;
           margin-top: 12px !important;
+          transition: all 0.5s ease-in-out !important;
+          position: relative !important;
+        }
+
+        .crt-post-text.collapsed {
+          max-height: none !important; /* Managed by JS for accuracy */
+        }
+
+        /* Read More Button styling */
+        .read-more-btn {
+          display: inline-block !important;
+          margin-top: 12px !important;
+          color: #0A66C2 !important;
+          font-weight: 700 !important;
+          font-family: 'Inter', sans-serif !important;
+          font-size: 14px !important;
+          cursor: pointer !important;
+          transition: all 0.2s ease !important;
+          border: none !important;
+          background: none !important;
+          padding: 0 !important;
+          text-decoration: none !important;
+        }
+
+        .read-more-btn:hover {
+          color: #004182 !important;
+          text-decoration: underline !important;
         }
 
         /* LinkedIn Blueprint - hashtags & mentions */
