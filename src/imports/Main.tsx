@@ -316,7 +316,7 @@ function Heading() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 1">
       <div className="flex flex-col font-['Manrope:Extra_Bold',sans-serif] justify-center leading-[42px] md:leading-[72px] not-italic relative shrink-0 text-white text-[42px] md:text-[72px] tracking-[-1.8px] w-full">
-        <p>Test</p>
+        <p>Protégez vos données et valeurs</p>
       </div>
     </div>
   );
