@@ -85,18 +85,10 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
           </div>
 
           {/* Programs Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1000px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1000px] mx-auto items-stretch">
             {/* Program 1: IA Act */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-[#0047BA] relative">
-              <div className="absolute -top-3 right-8">
-                <div className="px-4 py-1 rounded-full bg-[#0047BA]">
-                  <span className="font-['Inter:Bold',sans-serif] font-bold text-white text-[12px] uppercase tracking-wider">
-                    Populaire
-                  </span>
-                </div>
-              </div>
-              
-              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style={{ background: 'linear-gradient(135deg, #00A9C1 0%, #82E600 100%)' }}>
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-[#E5E9F0] relative h-full flex flex-col">
+              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 shrink-0" style={{ background: 'linear-gradient(135deg, #00A9C1 0%, #82E600 100%)' }}>
                 <Shield className="w-8 h-8 text-white" />
               </div>
               
@@ -104,11 +96,11 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
                 IA Act & Conformité
               </h3>
               
-              <p className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[16px] leading-[1.6] mb-6">
+              <p className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[16px] leading-[1.6] mb-6 flex-1">
                 Maîtrisez la réglementation européenne sur l'IA et mettez en place une gouvernance responsable de vos systèmes d'IA.
               </p>
               
-              <div className="space-y-3 mb-8 pb-8 border-b border-[#E5E9F0]">
+              <div className="space-y-3 mb-8 pb-8 border-b border-[#E5E9F0] shrink-0">
                 <div className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-[#E8F5F0] flex items-center justify-center">
                     <Clock className="w-4 h-4 text-[#00A9C1]" />
@@ -135,7 +127,7 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
                 </div>
               </div>
               
-              <div className="flex flex-col gap-3 w-full">
+              <div className="flex flex-col gap-3 w-full shrink-0">
                 <a 
                   href={`${import.meta.env.BASE_URL}Programme-IA-CADRE-JURIDIQUE.pdf`}
                   target="_blank" 
@@ -162,8 +154,16 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
             </div>
 
             {/* Program 2: IA & Métiers */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-[#E5E9F0]">
-              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style={{ background: 'linear-gradient(135deg, #0047BA 0%, #82E600 100%)' }}>
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-[#0047BA] relative h-full flex flex-col">
+              <div className="absolute -top-3 right-8">
+                <div className="px-4 py-1 rounded-full bg-[#0047BA]">
+                  <span className="font-['Inter:Bold',sans-serif] font-bold text-white text-[12px] uppercase tracking-wider">
+                    Populaire
+                  </span>
+                </div>
+              </div>
+
+              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 shrink-0" style={{ background: 'linear-gradient(135deg, #0047BA 0%, #82E600 100%)' }}>
                 <BookOpen className="w-8 h-8 text-white" />
               </div>
               
@@ -171,11 +171,11 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
                 Réinventer son métier avec l’IA et trouver ses cas d’usages
               </h3>
               
-              <p className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[16px] leading-[1.6] mb-6">
+              <p className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[16px] leading-[1.6] mb-6 flex-1">
                 Découvrez comment l'intelligence artificielle peut transformer votre quotidien professionnel et identifiez les cas d'usage pertinents pour votre activité.
               </p>
               
-              <div className="space-y-3 mb-8 pb-8 border-b border-[#E5E9F0]">
+              <div className="space-y-3 mb-8 pb-8 border-b border-[#E5E9F0] shrink-0">
                 <div className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-[#E8F5F0] flex items-center justify-center">
                     <Clock className="w-4 h-4 text-[#00A9C1]" />
@@ -202,9 +202,9 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
                 </div>
               </div>
               
-              <div className="flex flex-col gap-3 w-full">
+              <div className="flex flex-col gap-3 w-full shrink-0">
                 <a 
-                  href={`${import.meta.env.BASE_URL}programme_formation_ia_.docx`}
+                  href={`${import.meta.env.BASE_URL}programme_formation_ia_.pdf`}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-full py-3 px-6 rounded-lg transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center no-underline cursor-pointer"
@@ -216,7 +216,7 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
                 </a>
                 
                 <a 
-                  href={`${import.meta.env.BASE_URL}Fiche_Produit_IA_Qualiopi.docx`}
+                  href={`${import.meta.env.BASE_URL}Fiche_Produit_IA_Qualiopi.pdf`}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-full py-3 px-6 rounded-lg border-2 border-[#0047BA] hover:bg-[#F8FAFB] transition-colors duration-200 flex items-center justify-center text-center no-underline cursor-pointer"
