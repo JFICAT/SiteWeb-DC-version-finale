@@ -85,105 +85,9 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
           </div>
 
           {/* Programs Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Program 1: DPO */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-[#E5E9F0]">
-              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style={{ background: 'linear-gradient(135deg, #0047BA 0%, #00A9C1 100%)' }}>
-                <BookOpen className="w-8 h-8 text-white" />
-              </div>
-              
-              <h3 className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[24px] mb-4 leading-tight">
-                Formation d’un référent interne RGPD
-              </h3>
-              
-              <p className="font-['Inter:SemiBold',sans-serif] font-semibold text-[#0047BA] text-[15px] mb-4">
-                Afin de rendre son organisation conforme au RGPD
-              </p>
-
-              <div className="mb-6">
-                <p className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[16px] mb-2">Objectifs :</p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#00A9C1] shrink-0 mt-1" />
-                    <span className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[14px]">Connaître et comprendre les obligations liées au RGPD.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#00A9C1] shrink-0 mt-1" />
-                    <span className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[14px]">Être capable de mettre en application les obligations de conformité RGPD au sein de son entreprise.</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="space-y-3 mb-8 pb-8 border-b border-[#E5E9F0]">
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#E8F5F0] flex items-center justify-center">
-                    <Clock className="w-4 h-4 text-[#00A9C1]" />
-                  </div>
-                  <span className="font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px]">
-                    de 0,5 jours à 5 jours (3h30 à 35h), selon le besoin exprimé
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#E8F5F0] flex items-center justify-center">
-                    <Award className="w-4 h-4 text-[#00A9C1]" />
-                  </div>
-                  <span className="font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px]">
-                    Certification incluse
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#E8F5F0] flex items-center justify-center">
-                    <Users className="w-4 h-4 text-[#00A9C1]" />
-                  </div>
-                  <span className="font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px]">
-                    En présentiel ou distanciel
-                  </span>
-                </div>
-              </div>
-              
-              <button 
-                onClick={() => setShowRGPDDetails(!showRGPDDetails)}
-                className="w-full py-3 px-6 rounded-lg border-2 border-[#0047BA] hover:bg-[#F8FAFB] transition-all duration-200 group flex items-center justify-center gap-2 cursor-pointer"
-              >
-                <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#0047BA] text-[16px]">
-                  {showRGPDDetails ? "Voir moins" : "En savoir plus"}
-                </span>
-                <ChevronRight className={`w-4 h-4 text-[#0047BA] transition-transform duration-200 ${showRGPDDetails ? 'rotate-90' : ''}`} />
-              </button>
-
-              {/* Expandable Details Menu */}
-              <div className={`overflow-hidden transition-all duration-300 ${showRGPDDetails ? 'max-h-[800px] mt-6 opacity-100' : 'max-h-0 opacity-0'}`}>
-                <div className="p-4 bg-[#F8FAFB] rounded-xl border border-[#E5E9F0] space-y-4">
-                  <div className="space-y-3">
-                    {[
-                      "Connaître son système d’information",
-                      "Être capable d’analyser son organisation physique",
-                      "Réaliser la documentation interne obligatoire",
-                      "Auditer son site internet et/ou intranet",
-                      "Établir son registre des activités de traitement",
-                      "Mettre en place les autres registres : incidents, sous-traitants, suivi des demandes de droits, recueil des preuves de consentement",
-                      "Plannifier des sensibilisation des salariés à la cybersécurité et au RGPD",
-                      "Tester un logiciel de gestion du RGPD"
-                    ].map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#0047BA] mt-2 shrink-0" />
-                        <span className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[14px] leading-snug">
-                          {item}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="pt-4 border-t border-[#E5E9F0]">
-                    <p className="font-['Inter:SemiBold',sans-serif] font-semibold text-[#0A192F] text-[14px]">
-                      Action de formation individuelle ou de groupe
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Program 2: IA Act */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-[#0047BA]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1000px] mx-auto">
+            {/* Program 1: IA Act */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-[#0047BA] relative">
               <div className="absolute -top-3 right-8">
                 <div className="px-4 py-1 rounded-full bg-[#0047BA]">
                   <span className="font-['Inter:Bold',sans-serif] font-bold text-white text-[12px] uppercase tracking-wider">
@@ -257,18 +161,18 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
               </div>
             </div>
 
-            {/* Program 3: Cybersécurité */}
+            {/* Program 2: IA & Métiers */}
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-[#E5E9F0]">
-              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style={{ background: 'linear-gradient(135deg, #82E600 0%, #0047BA 100%)' }}>
-                <FileCheck className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style={{ background: 'linear-gradient(135deg, #0047BA 0%, #82E600 100%)' }}>
+                <BookOpen className="w-8 h-8 text-white" />
               </div>
               
               <h3 className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[28px] mb-4">
-                Cybersécurité
+                Réinventer son métier avec l’IA et trouver ses cas d’usages
               </h3>
               
               <p className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[16px] leading-[1.6] mb-6">
-                Protégez vos données et systèmes. Formation pratique aux enjeux de cybersécurité pour dirigeants et équipes IT.
+                Découvrez comment l'intelligence artificielle peut transformer votre quotidien professionnel et identifiez les cas d'usage pertinents pour votre activité.
               </p>
               
               <div className="space-y-3 mb-8 pb-8 border-b border-[#E5E9F0]">
@@ -277,7 +181,7 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
                     <Clock className="w-4 h-4 text-[#00A9C1]" />
                   </div>
                   <span className="font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px]">
-                    2 jours (14 heures)
+                    1 journée (7 heures)
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -285,7 +189,7 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
                     <Award className="w-4 h-4 text-[#00A9C1]" />
                   </div>
                   <span className="font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px]">
-                    Cas pratiques inclus
+                    Attestation de formation
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -293,16 +197,35 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
                     <Users className="w-4 h-4 text-[#00A9C1]" />
                   </div>
                   <span className="font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px]">
-                    Tous niveaux
+                    Format sur-mesure disponible
                   </span>
                 </div>
               </div>
               
-              <button className="w-full py-3 px-6 rounded-lg border-2 border-[#0047BA] hover:bg-[#0047BA] transition-colors duration-200 group cursor-pointer">
-                <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#0047BA] group-hover:text-white text-[16px]">
-                  En savoir plus
-                </span>
-              </button>
+              <div className="flex flex-col gap-3 w-full">
+                <a 
+                  href={`${import.meta.env.BASE_URL}programme_formation_ia_.docx`}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full py-3 px-6 rounded-lg transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center no-underline cursor-pointer"
+                  style={{ background: 'linear-gradient(135deg, #0047BA 0%, #00A9C1 100%)' }}
+                >
+                  <span className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[15px]">
+                    Programme de formation
+                  </span>
+                </a>
+                
+                <a 
+                  href={`${import.meta.env.BASE_URL}Fiche_Produit_IA_Qualiopi.docx`}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full py-3 px-6 rounded-lg border-2 border-[#0047BA] hover:bg-[#F8FAFB] transition-colors duration-200 flex items-center justify-center text-center no-underline cursor-pointer"
+                >
+                  <span className="font-['Manrope:Bold',sans-serif] font-bold text-[#0047BA] text-[15px]">
+                    Fiche de formation
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
