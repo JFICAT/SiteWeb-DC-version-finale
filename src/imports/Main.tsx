@@ -6,8 +6,9 @@ import heroIllustration from "figma:asset/53e0a23a3adb6c4bc33708448daf06ff9a49f9
 import svgPaths from "./svg-2sqwfkv5kr";
 import imgCybersecurityInterface from "figma:asset/15bdec7e0b0fb784d49f88bf54bf7523e1051e4f.png";
 import imgServerInfrastructure from "figma:asset/ee3de47921ca488ba9f51b39e9b32147fee48add.png";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Trophy, Target, Euro, Bot, Handshake } from "lucide-react";
 import logoFabrik01 from "../assets/logo-fabrik01-blanc.png";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../app/components/ui/carousel";
 import TestimonialsSection from "../app/components/TestimonialsSection";
 import { LogoBand } from "../app/components/LogoBand";
 
@@ -522,116 +523,96 @@ function PillarCard({ emoji, label }: { emoji: string; label: string }) {
 
 
 function SectionStats() {
+  const cards = [
+    {
+      icon: <Trophy className="w-8 h-8 text-[#00A9C1]" />,
+      title: "1. Vous gagnez plus de contrats",
+      text: "En B2B, la conformité rassure vos partenaires et fait la différence lors des appels d'offres."
+    },
+    {
+      icon: <Target className="w-8 h-8 text-[#0047BA]" />,
+      title: "2. Votre marketing est plus performant",
+      text: "Le respect de vos prospects et clients est un gage de confiance qui améliore vos résultats."
+    },
+    {
+      icon: <Euro className="w-8 h-8 text-[#82E600]" />,
+      title: "3. Vous augmentez la valeur de votre entreprise",
+      text: "Un atout indispensable pour rassurer les investisseurs lors d'une levée de fonds, d'une vente ou d'une fusion."
+    },
+    {
+      icon: <Bot className="w-8 h-8 text-[#00A9C1]" />,
+      title: "4. Vous innovez en toute sécurité",
+      text: "L'IA a besoin de données. Data Conforme vous aide à l'intégrer sans risque et à trouver des solutions souveraines."
+    },
+    {
+      icon: <Handshake className="w-8 h-8 text-[#0047BA]" />,
+      title: "5. Vous fidélisez vos talents",
+      text: "Une marque employeur forte passe par le respect des données RH de vos collaborateurs."
+    }
+  ];
+
   return (
-    <div className="relative bg-[#f8fafc] w-full py-[48px]" data-name="Section - Stats">
+    <div className="relative bg-[#f8fafc] w-full py-[64px] md:py-[96px]" data-name="Section - Stats">
       <div className="max-w-[1200px] mx-auto px-[24px]">
-        
-        {/* Main Stats Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-[48px] items-center mb-[48px]">
-          {/* Left: Intro Text */}
-          <div className="lg:col-span-12 mb-12 flex flex-col items-center text-center">
-            <h3 className="font-['Manrope:Bold',sans-serif] text-[36px] text-[#0A192F] mb-8">
-              De l'obligation légale à l'opportunité
-            </h3>
-            <p className="font-['Inter:Regular',sans-serif] text-[18px] leading-[30px] text-[#5A6A7A] max-w-3xl mx-auto">
-              La conformité n'est plus une simple contrainte administrative. C'est devenu l'exigence n°1 de vos clients et partenaires. L'IA Act et le RGPD imposent des standards de confiance qui redéfinissent la valeur de votre organisation sur le marché.
-            </p>
-          </div>
-
-          {/* Stats Grid - 4 items */}
-          <div className="lg:col-span-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[32px]">
-            <div className="flex flex-col gap-[12px] bg-white p-6 rounded-xl border border-[rgba(0,71,186,0.05)] shadow-sm">
-              <span className="font-['Manrope:Extra_Bold',sans-serif] text-[42px] text-[#0047BA] leading-none">76%</span>
-              <p className="text-[14px] leading-[20px] text-[#5A6A7A]">Des consommateurs n'achètent pas si la confiance data est absente.</p>
-            </div>
-            <div className="flex flex-col gap-[12px] bg-white p-6 rounded-xl border border-[rgba(0,71,186,0.05)] shadow-sm">
-              <span className="font-['Manrope:Extra_Bold',sans-serif] text-[42px] text-[#00A9C1] leading-none">72%</span>
-              <p className="text-[14px] leading-[20px] text-[#5A6A7A]">Des PME européennes cherchent une meilleure souveraineté numérique.</p>
-            </div>
-            <div className="flex flex-col gap-[12px] bg-white p-6 rounded-xl border border-[rgba(0,71,186,0.05)] shadow-sm">
-              <span className="font-['Manrope:Extra_Bold',sans-serif] text-[42px] text-[#82E600] leading-none">75%</span>
-              <p className="text-[14px] leading-[20px] text-[#5A6A7A]">Des candidats privilégient les entreprises à impact social et éthique.</p>
-            </div>
-            <div className="flex flex-col gap-[12px] bg-white p-6 rounded-xl border border-[rgba(0,71,186,0.05)] shadow-sm">
-              <span className="font-['Manrope:Extra_Bold',sans-serif] text-[42px] text-[#0A192F] leading-none">94%</span>
-              <p className="text-[14px] leading-[20px] text-[#5A6A7A]">Des entreprises voient leurs ventes bloquées sans garanties privacy.</p>
-            </div>
-          </div>
+        {/* Intro Text */}
+        <div className="mb-12 flex flex-col items-center text-center">
+          <h3 className="font-['Manrope:Bold',sans-serif] text-[36px] text-[#0A192F] mb-6">
+            De l'obligation légale à l'opportunité
+          </h3>
+          <p className="font-['Inter:Regular',sans-serif] text-[18px] leading-[30px] text-[#5A6A7A] max-w-3xl mx-auto">
+            La conformité n'est plus une simple contrainte administrative. C'est devenu l'exigence n°1 de vos clients et partenaires. L'IA Act et le RGPD imposent des standards de confiance qui redéfinissent la valeur de votre organisation sur le marché.
+          </p>
         </div>
 
-        {/* Pillars & Conclusion Row */}
-        <div className="bg-white rounded-[24px] p-[40px] border border-[rgba(0,71,186,0.1)] shadow-sm mb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[48px] items-center">
-            {/* Left: Pillars grid */}
-            <div className="grid grid-cols-2 gap-[16px]">
-              <div className="flex items-center gap-[12px] p-[20px] bg-[#f8fafc] rounded-[16px] border border-[rgba(0,71,186,0.05)]">
-                <span className="text-[28px]">🛡️</span>
-                <span className="font-['Inter:Semi_Bold',sans-serif] text-[15px] text-[#0A192F]">Conformité</span>
-              </div>
-              <div className="flex items-center gap-[12px] p-[20px] bg-[#f8fafc] rounded-[16px] border border-[rgba(0,71,186,0.05)]">
-                <span className="text-[28px]">🇫🇷</span>
-                <span className="font-['Inter:Semi_Bold',sans-serif] text-[15px] text-[#0A192F]">Souveraineté</span>
-              </div>
-              <div className="flex items-center gap-[12px] p-[20px] bg-[#f8fafc] rounded-[16px] border border-[rgba(0,71,186,0.05)]">
-                <span className="text-[28px]">💎</span>
-                <span className="font-['Inter:Semi_Bold',sans-serif] text-[15px] text-[#0A192F]">Éthique</span>
-              </div>
-              <div className="flex items-center gap-[12px] p-[20px] bg-[#f8fafc] rounded-[16px] border border-[rgba(0,71,186,0.05)]">
-                <span className="text-[28px]">🤖</span>
-                <span className="font-['Inter:Semi_Bold',sans-serif] text-[15px] text-[#0A192F]">IA Responsable</span>
-              </div>
+        {/* Carousel Section */}
+        <div className="relative mb-20 px-4 sm:px-12">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4 md:-ml-6">
+              {cards.map((card, index) => (
+                <CarouselItem key={index} className="pl-4 md:pl-6 md:basis-1/2 lg:basis-1/3">
+                  <div className="h-full p-8 bg-white rounded-2xl border border-[rgba(0,71,186,0.1)] shadow-sm hover:shadow-lg hover:-translate-y-[5px] transition-all duration-300 ease-out flex flex-col gap-6 group">
+                    <div className="w-16 h-16 rounded-xl bg-[#f8fafc] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      {card.icon}
+                    </div>
+                    <div className="flex flex-col gap-3">
+                      <h4 className="font-['Manrope:Bold',sans-serif] text-[20px] text-[#0A192F] leading-tight">
+                        {card.title}
+                      </h4>
+                      <p className="font-['Inter:Regular',sans-serif] text-[16px] text-[#5A6A7A] leading-relaxed">
+                        {card.text}
+                      </p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="hidden sm:block">
+              <CarouselPrevious className="bg-white hover:bg-[#f8fafc] border-[rgba(0,71,186,0.1)] shadow-sm w-12 h-12 -left-4 lg:-left-6" />
+              <CarouselNext className="bg-white hover:bg-[#f8fafc] border-[rgba(0,71,186,0.1)] shadow-sm w-12 h-12 -right-4 lg:-right-6" />
             </div>
-
-            {/* Right: Conclusion */}
-            <div className="relative">
-              <div className="absolute -left-6 top-0 bottom-0 w-1 bg-[#00A9C1] rounded-full hidden lg:block"></div>
-              <p className="font-['Inter:Regular',sans-serif] text-[18px] leading-[30px] text-[#344155]">
-                Transformer votre conformité en un <span className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#0047BA]">différenciateur stratégique</span> est le meilleur moyen de fidéliser vos partenaires et de rassurer vos investisseurs dans un environnement saturé par l'IA technologique.
-              </p>
-            </div>
-          </div>
+          </Carousel>
         </div>
 
-        {/* Sources block */}
-        <div className="mt-8 pt-8 border-t border-[rgba(0,71,186,0.1)]">
-          <h4 className="font-['Manrope:Bold',sans-serif] text-[14px] uppercase tracking-wider text-[#0A192F] mb-6 flex items-center gap-2">
-            <span className="w-6 h-[1px] bg-[#00A9C1]"></span>
-            Sources (≥ 2020)
-          </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
-            <div className="flex items-start gap-3">
-              <span className="text-[#00A9C1] font-bold text-[13px] mt-0.5">01</span>
-              <p className="text-[13px] text-[#5A6A7A] leading-relaxed">
-                <span className="font-semibold text-[#0A192F]">Cisco — Consumer Privacy Survey 2022 (PDF)</span><br/>
-                Étude sur la perception de la vie privée par les consommateurs. 
-                <a href="https://www.cisco.com/c/dam/en_us/about/doing_business/trust-center/docs/cisco-consumer-privacy-survey-2022.pdf" target="_blank" rel="noopener noreferrer" className="ml-2 text-[#0047BA] hover:underline font-medium italic">Consulter</a>
-              </p>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-[#00A9C1] font-bold text-[13px] mt-0.5">02</span>
-              <p className="text-[13px] text-[#5A6A7A] leading-relaxed">
-                <span className="font-semibold text-[#0A192F]">team.blue — European SMEs seek greater Data Sovereignty… (2025)</span><br/>
-                Rapport sur la souveraineté des données pour les PME européennes.
-                <a href="https://press.team.blue/252488-european-smes-seek-greater-data-sovereignty-amid-rising-trust-concerns-reveals-team-blue-report/" target="_blank" rel="noopener noreferrer" className="ml-2 text-[#0047BA] hover:underline font-medium italic">Consulter</a>
-              </p>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-[#00A9C1] font-bold text-[13px] mt-0.5">03</span>
-              <p className="text-[13px] text-[#5A6A7A] leading-relaxed">
-                <span className="font-semibold text-[#0A192F]">PwC — Global Workforce Hopes & Fears Survey 2022</span><br/>
-                Enquête sur les attentes des employés envers leurs employeurs.
-                <a href="https://www.pwc.com/gx/en/issues/workforce/hopes-and-fears-2022.html" target="_blank" rel="noopener noreferrer" className="ml-2 text-[#0047BA] hover:underline font-medium italic">Consulter</a>
-              </p>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-[#00A9C1] font-bold text-[13px] mt-0.5">04</span>
-              <p className="text-[13px] text-[#5A6A7A] leading-relaxed">
-                <span className="font-semibold text-[#0A192F]">Cisco — Data Privacy Benchmark Study 2024 (PDF)</span><br/>
-                Étude sur l'impact business de la protection des données.
-                <a href="https://www.cisco.com/c/dam/en_us/about/doing_business/trust-center/docs/cisco-privacy-benchmark-study-2024.pdf" target="_blank" rel="noopener noreferrer" className="ml-2 text-[#0047BA] hover:underline font-medium italic">Consulter</a>
-              </p>
-            </div>
-          </div>
+        {/* Conclusion / CTA */}
+        <div className="flex flex-col items-center text-center bg-white rounded-3xl p-10 md:p-14 border border-[rgba(0,71,186,0.1)] shadow-sm relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(circle_at_top_right,rgba(0,169,193,0.05)_0%,transparent_70%)] pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-[radial-gradient(circle_at_bottom_left,rgba(130,230,0,0.05)_0%,transparent_70%)] pointer-events-none" />
+          
+          <h2 className="font-['Manrope:Bold',sans-serif] text-[28px] md:text-[36px] text-[#0A192F] mb-8 relative z-10">
+            Et vous, qu'attendez-vous pour faire de vos données une force ?
+          </h2>
+          <a
+            href="#offres-pricing"
+            className="bg-[#0047BA] text-white font-['Manrope:Bold',sans-serif] text-[18px] px-8 py-4 rounded-xl shadow-md hover:bg-[#00A9C1] hover:-translate-y-1 transition-all duration-300 relative z-10 cursor-pointer no-underline"
+          >
+            Découvrir notre accompagnement
+          </a>
         </div>
       </div>
     </div>
