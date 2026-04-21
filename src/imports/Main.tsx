@@ -6,9 +6,9 @@ import heroIllustration from "figma:asset/53e0a23a3adb6c4bc33708448daf06ff9a49f9
 import svgPaths from "./svg-2sqwfkv5kr";
 import imgCybersecurityInterface from "figma:asset/15bdec7e0b0fb784d49f88bf54bf7523e1051e4f.png";
 import imgServerInfrastructure from "figma:asset/ee3de47921ca488ba9f51b39e9b32147fee48add.png";
-import { ChevronRight, Trophy, Target, Euro, Bot, Handshake } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import logoFabrik01 from "../assets/logo-fabrik01-blanc.png";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../app/components/ui/carousel";
+import BenefitsSection from "../app/components/BenefitsSection";
 import TestimonialsSection from "../app/components/TestimonialsSection";
 import { LogoBand } from "../app/components/LogoBand";
 
@@ -521,102 +521,8 @@ function PillarCard({ emoji, label }: { emoji: string; label: string }) {
   );
 }
 
-
 function SectionStats() {
-  const cards = [
-    {
-      icon: <Trophy className="w-8 h-8 text-[#00A9C1]" />,
-      title: "1. Vous gagnez plus de contrats",
-      text: "En B2B, la conformité rassure vos partenaires et fait la différence lors des appels d'offres."
-    },
-    {
-      icon: <Target className="w-8 h-8 text-[#0047BA]" />,
-      title: "2. Votre marketing est plus performant",
-      text: "Le respect de vos prospects et clients est un gage de confiance qui améliore vos résultats."
-    },
-    {
-      icon: <Euro className="w-8 h-8 text-[#82E600]" />,
-      title: "3. Vous augmentez la valeur de votre entreprise",
-      text: "Un atout indispensable pour rassurer les investisseurs lors d'une levée de fonds, d'une vente ou d'une fusion."
-    },
-    {
-      icon: <Bot className="w-8 h-8 text-[#00A9C1]" />,
-      title: "4. Vous innovez en toute sécurité",
-      text: "L'IA a besoin de données. Data Conforme vous aide à l'intégrer sans risque et à trouver des solutions souveraines."
-    },
-    {
-      icon: <Handshake className="w-8 h-8 text-[#0047BA]" />,
-      title: "5. Vous fidélisez vos talents",
-      text: "Une marque employeur forte passe par le respect des données RH de vos collaborateurs."
-    }
-  ];
-
-  return (
-    <div className="relative bg-[#f8fafc] w-full py-[64px] md:py-[96px]" data-name="Section - Stats">
-      <div className="max-w-[1200px] mx-auto px-[24px]">
-        {/* Intro Text */}
-        <div className="mb-12 flex flex-col items-center text-center">
-          <h3 className="font-['Manrope:Bold',sans-serif] text-[36px] text-[#0A192F] mb-6">
-            De l'obligation légale à l'opportunité
-          </h3>
-          <p className="font-['Inter:Regular',sans-serif] text-[18px] leading-[30px] text-[#5A6A7A] max-w-3xl mx-auto">
-            La conformité n'est plus une simple contrainte administrative. C'est devenu l'exigence n°1 de vos clients et partenaires. L'IA Act et le RGPD imposent des standards de confiance qui redéfinissent la valeur de votre organisation sur le marché.
-          </p>
-        </div>
-
-        {/* Carousel Section */}
-        <div className="relative mb-20 px-4 sm:px-12">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-4 md:-ml-6">
-              {cards.map((card, index) => (
-                <CarouselItem key={index} className="pl-4 md:pl-6 md:basis-1/2 lg:basis-1/3">
-                  <div className="h-full p-8 bg-white rounded-2xl border border-[rgba(0,71,186,0.1)] shadow-sm hover:shadow-lg hover:-translate-y-[5px] transition-all duration-300 ease-out flex flex-col gap-6 group">
-                    <div className="w-16 h-16 rounded-xl bg-[#f8fafc] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      {card.icon}
-                    </div>
-                    <div className="flex flex-col gap-3">
-                      <h4 className="font-['Manrope:Bold',sans-serif] text-[20px] text-[#0A192F] leading-tight">
-                        {card.title}
-                      </h4>
-                      <p className="font-['Inter:Regular',sans-serif] text-[16px] text-[#5A6A7A] leading-relaxed">
-                        {card.text}
-                      </p>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="hidden sm:block">
-              <CarouselPrevious className="bg-white hover:bg-[#f8fafc] border-[rgba(0,71,186,0.1)] shadow-sm w-12 h-12 -left-4 lg:-left-6" />
-              <CarouselNext className="bg-white hover:bg-[#f8fafc] border-[rgba(0,71,186,0.1)] shadow-sm w-12 h-12 -right-4 lg:-right-6" />
-            </div>
-          </Carousel>
-        </div>
-
-        {/* Conclusion / CTA */}
-        <div className="flex flex-col items-center text-center bg-white rounded-3xl p-10 md:p-14 border border-[rgba(0,71,186,0.1)] shadow-sm relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(circle_at_top_right,rgba(0,169,193,0.05)_0%,transparent_70%)] pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-[radial-gradient(circle_at_bottom_left,rgba(130,230,0,0.05)_0%,transparent_70%)] pointer-events-none" />
-          
-          <h2 className="font-['Manrope:Bold',sans-serif] text-[28px] md:text-[36px] text-[#0A192F] mb-8 relative z-10">
-            Et vous, qu'attendez-vous pour faire de vos données une force ?
-          </h2>
-          <a
-            href="#offres-pricing"
-            className="bg-[#0047BA] text-white font-['Manrope:Bold',sans-serif] text-[18px] px-8 py-4 rounded-xl shadow-md hover:bg-[#00A9C1] hover:-translate-y-1 transition-all duration-300 relative z-10 cursor-pointer no-underline"
-          >
-            Découvrir notre accompagnement
-          </a>
-        </div>
-      </div>
-    </div>
-  );
+  return <BenefitsSection />;
 }
 
 function ServerInfrastructure() {

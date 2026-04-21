@@ -135,6 +135,17 @@
   --color-brand-secondary-dark: var(--brand-secondary-dark);
   --color-brand-tertiary: var(--brand-tertiary);
   --color-brand-neutral: var(--brand-neutral);
+
+  /* Section Benefits Custom Tokens */
+  --font-poppins: "Poppins", sans-serif;
+  --color-navy: #0f2044;
+  --color-teal: #2ab5a0;
+  --color-blue-accent: #2563eb;
+  --color-green-accent: #22c55e;
+  --color-purple-accent: #7c3aed;
+  --color-orange-accent: #f97316;
+  --color-card-bg: #ffffff;
+  --color-section-bg: #f4f7fb;
 }
 
 @layer base {
