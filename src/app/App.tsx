@@ -65,31 +65,31 @@ function Navbar({ currentPage, onNavigate }: { currentPage?: string; onNavigate?
             <ChevronDown className="w-4 h-4 transition-transform duration-300 ease-out group-hover:rotate-180" />
           </Link>
           {/* Dropdown submenu */}
-          <div className="absolute top-full left-0 pt-2 pointer-events-none group-hover:pointer-events-auto">
+          <div className="absolute top-full left-0 pt-2 pointer-events-none group-hover:pointer-events-auto w-max">
             <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
               <div className="overflow-hidden">
                 <div className="bg-white rounded-none shadow-lg border border-[rgba(0,71,186,0.1)] py-2 w-max min-w-[320px]">
               <Link
                 to="/#services-formations"
-                className="block w-full text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
+                className="block w-full whitespace-nowrap text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
               >
                 Nos Services & Formations
               </Link>
               <Link
                 to="/#offres-pricing"
-                className="block w-full text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
+                className="block w-full whitespace-nowrap text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
               >
                 Budget compliance adapté
               </Link>
               <Link
                 to="/#rgpd-cybersec"
-                className="block w-full text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
+                className="block w-full whitespace-nowrap text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
               >
                 Le RGPD et les normes de Cybersécurités
               </Link>
               <Link
                 to="/#pilotage-conformite"
-                className="block w-full text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
+                className="block w-full whitespace-nowrap text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
               >
                 Pilotage de la conformité
               </Link>
@@ -108,19 +108,19 @@ function Navbar({ currentPage, onNavigate }: { currentPage?: string; onNavigate?
             <ChevronDown className="w-4 h-4 transition-transform duration-300 ease-out group-hover:rotate-180" />
           </Link>
           {/* Dropdown submenu */}
-          <div className="absolute top-full left-0 pt-2 pointer-events-none group-hover:pointer-events-auto">
+          <div className="absolute top-full left-0 pt-2 pointer-events-none group-hover:pointer-events-auto w-max">
             <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
               <div className="overflow-hidden">
                 <div className="bg-white rounded-none shadow-lg border border-[rgba(0,71,186,0.1)] py-2 w-max min-w-[240px]">
               <Link
                 to="/ia-conforme#ia-services"
-                className="block w-full text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
+                className="block w-full whitespace-nowrap text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
               >
                 Conformité des IA
               </Link>
               <Link
                 to="/fabrik01"
-                className="block w-full text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
+                className="block w-full whitespace-nowrap text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
               >
                 Fabrik01
               </Link>
