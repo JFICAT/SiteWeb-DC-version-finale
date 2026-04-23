@@ -701,9 +701,9 @@ export default function Main({ onNavigate }: { onNavigate?: (page: string) => vo
       
       {/* Old Site Injected Sections */}
       <SectionOffres />
-      <SectionSecteurs />
-      <SectionRGPD />
       <SectionEcosystem />
+      <SectionRGPD />
+      <SectionSecteurs />
 
       <TestimonialsSection />
       <SectionCtAsSocialProof />
