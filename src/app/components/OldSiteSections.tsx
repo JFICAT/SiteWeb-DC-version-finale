@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { CheckCircle2, ShieldCheck, Search, FileText, UserCheck, HardDrive, GraduationCap, Building2, Laptop, HeartPulse, Factory, Globe2, ChevronDown, ChevronUp } from "lucide-react";
 import isoLogo from "../../assets/iso27001-logo.png";
 import nis2Logo from "../../assets/nis2-logo.png";
+import applicationDpo from "../../assets/application-dpo.png";
+import applicationIa from "../../assets/application-ia.jpg";
 
 const publicUrl = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 
@@ -254,83 +256,113 @@ export function SectionOffres() {
 
 export function SectionEcosystem() {
   return (
-    <div id="pilotage-conformite" className="w-full py-[100px] bg-white relative overflow-hidden scroll-mt-32" data-name="Section - Ecosystem">
+    <div id="pilotage-conformite" className="w-full py-[100px] bg-[#0A192F] relative overflow-hidden scroll-mt-32" data-name="Section - Ecosystem">
       <div className="max-w-[1280px] mx-auto px-[32px]">
-        <div className="text-center mb-[64px]">
-          <div className="inline-block px-[16px] py-[6px] rounded-full bg-[#E6F6F9] text-[#00A9C1] font-['Inter:Semi_Bold',sans-serif] text-[14px] mb-[20px]">
+        {/* Header */}
+        <div className="text-center mb-[80px]">
+          <div className="inline-block px-[16px] py-[6px] rounded-full bg-[#E6F6F9]/10 text-[#00A9C1] font-['Inter:Semi_Bold',sans-serif] text-[14px] mb-[20px] border border-[#00A9C1]/20">
             Pilotage Digital
           </div>
-          <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[#0A192F] text-[32px] md:text-[48px] leading-tight tracking-tight">
+          <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-white text-[32px] md:text-[48px] leading-tight tracking-tight">
             Nous pilotons votre conformité avec un logiciel innovant
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-[24px] items-stretch">
-          {/* Software Pilotage (Bento Card - Full Width) */}
-          <div className="lg:col-span-12 bg-[#0A192F] rounded-[32px] p-[32px] md:p-[60px] pb-16 relative flex flex-col items-center text-center lg:text-left lg:items-start overflow-hidden lg:overflow-visible">
-            <div className="relative z-10 max-w-[800px] w-full">
-              <h3 className="font-['Manrope:Bold',sans-serif] text-[26px] md:text-[32px] text-[#82E600] mb-[16px] md:mb-[24px]">Pilotage Digital & Accountability</h3>
-              <p className="font-['Inter:Regular',sans-serif] text-[16px] md:text-[18px] text-[rgba(255,255,255,0.7)] leading-[1.7] mb-[32px] md:mb-[48px]">
-                Le respect de "l'accountability" simplifié via notre plateforme dédiée. Suivez votre avancement en temps réel avec une clarté absolue et gérez l'ensemble de vos registres en quelques clics.
+        <div className="flex flex-col gap-[120px]">
+          {/* BLOC A : Application de suivi DPO */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Image GAUCHE */}
+            <div className="relative group order-2 lg:order-1">
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#00A9C1]/20 to-[#82E600]/20 rounded-[32px] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <img 
+                src={applicationDpo} 
+                alt="Application de suivi DPO" 
+                className="relative w-full h-auto rounded-[24px] shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10"
+              />
+            </div>
+            {/* Texte DROITE */}
+            <div className="flex flex-col items-start order-1 lg:order-2">
+              <span className="text-[#82E600] font-['Inter:Semi_Bold',sans-serif] tracking-wider uppercase text-[14px] mb-4">
+                Pilotage Digital & Accountability
+              </span>
+              <h3 className="font-['Manrope:Bold',sans-serif] text-[28px] md:text-[36px] text-white mb-6 leading-tight">
+                Votre Conformité RGPD en Temps Réel
+              </h3>
+              <p className="font-['Inter:Regular',sans-serif] text-[16px] md:text-[18px] text-white/70 leading-[1.7] mb-8">
+                La conformité n'est plus une simple contrainte administrative, c'est devenu l'exigence n°1 de vos clients et partenaires. Avec notre application innovante de suivi DPO, transformez vos obligations légales en un véritable différenciateur stratégique. Conçu par des experts qui comprennent votre réalité technique, notre tableau de bord intelligent centralise et simplifie le pilotage de votre mise aux normes.
               </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[16px] mb-[40px] w-full">
+              <div className="grid grid-cols-1 gap-6 mb-10">
                 {[
-                  "Registres automatisés",
-                  "Cartographie de votre SI et de vos outils",
-                  "Registre des sous-traitants",
-                  "Analyse des systèmes d'IA internes et externes",
-                  "Module de communication conformité et infos légales"
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-[10px] bg-[rgba(255,255,255,0.05)] p-[12px] px-[18px] rounded-[12px] border border-[rgba(255,255,255,0.1)] justify-center lg:justify-start">
-                    <CheckCircle2 size={18} className="text-[#82E600] shrink-0" />
-                    <span className="font-['Inter:Medium',sans-serif] text-white text-[13.5px]">{item}</span>
+                  { title: "Indicateurs en temps réel", desc: "Vision claire et instantanée de votre maturité et de votre score global." },
+                  { title: "Analyse multicritère", desc: "Détection des signaux faibles via des vues radar détaillées (9 axes)." },
+                  { title: "Traçabilité & Efficacité", desc: "Gestion des registres et pilotage des actions de la vérification à la clôture." }
+                ].map((point, i) => (
+                  <div key={i} className="flex gap-4 items-start">
+                    <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-[#82E600]/20 flex items-center justify-center">
+                      <CheckCircle2 size={16} className="text-[#82E600]" />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-['Inter:Semi_Bold',sans-serif] text-[16px]">{point.title}</h4>
+                      <p className="text-white/50 text-[14px] leading-relaxed">{point.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
+              <p className="text-[#82E600] italic font-['Inter:Medium',sans-serif] text-[16px] border-l-2 border-[#82E600] pl-4">
+                L'avantage Data Conforme : Prenez des décisions éclairées et gagnez des contrats en prouvant la robustesse de votre écosystème.
+              </p>
             </div>
+          </div>
 
-            {/* App Demo Video - Browser Frame Design (Maximized) */}
-            <div className="-mt-4 lg:-mt-8 relative w-full flex items-end justify-center perspective-1000">
-              <div className="w-full lg:w-[115%] lg:left-1/2 lg:-translate-x-1/2 relative bg-[#1A2340] rounded-t-[32px] border-x border-t border-[rgba(255,255,255,0.15)] p-3 pb-0 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] transform transition-all hover:scale-[1.01] duration-700">
-                {/* Browser Header Bar */}
-                <div className="flex items-center gap-2 px-4 py-3 bg-[#1A2340] rounded-t-[18px]">
-                  <div className="flex gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
+          {/* BLOC B : Application Gouvernance IA */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Texte GAUCHE */}
+            <div className="flex flex-col items-start order-1">
+              <span className="text-[#82E600] font-['Inter:Semi_Bold',sans-serif] tracking-wider uppercase text-[14px] mb-4">
+                Maîtrise et Gouvernance des Systèmes d'IA
+              </span>
+              <h3 className="font-['Manrope:Bold',sans-serif] text-[28px] md:text-[36px] text-white mb-6 leading-tight">
+                Préparez-vous à l'IA Act
+              </h3>
+              <p className="font-['Inter:Regular',sans-serif] text-[16px] md:text-[18px] text-white/70 leading-[1.7] mb-8">
+                L'Intelligence Artificielle redéfinit la valeur de votre organisation, mais elle exige de nouveaux standards de confiance. Notre module dédié à l'analyse de risques et à la gouvernance de l'IA vous offre une approche intégrée pour cartographier, évaluer et maîtriser vos systèmes, garantissant ainsi une innovation responsable et durable.
+              </p>
+              <div className="grid grid-cols-1 gap-6 mb-10">
+                {[
+                  { title: "Analyse des risques IA", desc: "Cartographie des systèmes critiques et évaluation des menaces (biais, transparence)." },
+                  { title: "Gouvernance centralisée", desc: "Pilotage des politiques, rôles et exigences éthiques (explicabilité, robustesse)." },
+                  { title: "Preuves automatisées", desc: "Suivi de l'évolution du score de gouvernance et génération automatique de rapports d'audit." }
+                ].map((point, i) => (
+                  <div key={i} className="flex gap-4 items-start">
+                    <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-[#82E600]/20 flex items-center justify-center">
+                      <CheckCircle2 size={16} className="text-[#82E600]" />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-['Inter:Semi_Bold',sans-serif] text-[16px]">{point.title}</h4>
+                      <p className="text-white/50 text-[14px] leading-relaxed">{point.desc}</p>
+                    </div>
                   </div>
-                  <div className="mx-auto bg-white/5 rounded-md px-12 py-1 flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-[#82E600] opacity-50" />
-                    <span className="text-[10px] text-white/30 font-['Inter:Medium',sans-serif] tracking-wider uppercase">app.dataconforme.com</span>
-                  </div>
-                </div>
-                
-                {/* Video Container */}
-                <div className="relative w-full aspect-video rounded-t-[4px] overflow-hidden bg-[#0A192F]">
-                  <video 
-                    autoPlay 
-                    muted 
-                    loop 
-                    playsInline 
-                    className="w-full h-full object-cover"
-                  >
-                    <source src={publicUrl("app-demo.mov")} type="video/quicktime" />
-                    <source src={publicUrl("app-demo.mov")} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  
-                  {/* Subtle overlay gradient to blend with the frame */}
-                  <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_40px_rgba(0,0,0,0.3)]" />
-                </div>
+                ))}
               </div>
+              <p className="text-[#82E600] italic font-['Inter:Medium',sans-serif] text-[16px] border-l-2 border-[#82E600] pl-4">
+                L'avantage Data Conforme : Sécurisez vos actifs technologiques et faites de la transparence un levier de confiance absolu.
+              </p>
             </div>
-            
-            {/* Ambient glows */}
-            <div className="absolute top-[-100px] right-[-100px] w-[500px] h-[500px] bg-[#00A9C1] blur-[150px] opacity-10" />
-            <div className="absolute bottom-[-50px] left-[-50px] w-[300px] h-[300px] bg-[#82E600] blur-[120px] opacity-10" />
+            {/* Image DROITE */}
+            <div className="relative group order-2">
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#00A9C1]/20 to-[#82E600]/20 rounded-[32px] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <img 
+                src={applicationIa} 
+                alt="Application Gouvernance IA" 
+                className="relative w-full h-auto rounded-[24px] shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10"
+              />
+            </div>
           </div>
         </div>
+
+        {/* Ambient glows */}
+        <div className="absolute top-[-100px] right-[-100px] w-[500px] h-[500px] bg-[#00A9C1] blur-[150px] opacity-10" />
+        <div className="absolute bottom-[-50px] left-[-50px] w-[300px] h-[300px] bg-[#82E600] blur-[120px] opacity-10" />
       </div>
     </div>
   );
