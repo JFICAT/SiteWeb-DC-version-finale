@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import Lenis from 'lenis';
+import 'lenis/dist/lenis.css';
 import { Routes, Route, useNavigate, useLocation, Link } from "react-router";
 import logoDataConforme from "../assets/logo.png";
 import logoDcDegrade from "../assets/logo-dc-degrade.png";
@@ -426,73 +428,116 @@ export default function App() {
     else navigate("/" + page);
   };
 
-  // Global Scroll Animation Observer
+  // --- Smooth Scrolling (Lenis) ---
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+      infinite: false,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
+  // --- Global Scroll Reveal System ---
   useEffect(() => {
     // Basic scroll to top if NO hash is present
     if (!location.hash) {
       window.scrollTo(0, 0);
     }
 
-    const observer = new IntersectionObserver(
+    const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.remove("opacity-0", "translate-y-10");
-            entry.target.classList.add("opacity-100", "translate-y-0");
-            // Optional: observer.unobserve(entry.target);
+            const target = entry.target as HTMLElement;
+            
+            // Stagger Logic: Detect if element is part of a group
+            const parent = target.parentElement;
+            const isGroupChild = parent && (
+              parent.classList.contains('grid') || 
+              parent.classList.contains('flex') ||
+              parent.getAttribute('data-name')?.toLowerCase().includes('grid') ||
+              parent.getAttribute('data-name')?.toLowerCase().includes('list') ||
+              target.tagName === 'LI'
+            );
+
+            if (isGroupChild) {
+              // Apply delay based on index among reveal-element siblings
+              const siblings = Array.from(parent.children).filter(child => child.classList.contains('reveal-element'));
+              const index = siblings.indexOf(target);
+              if (index !== -1) {
+                target.style.transitionDelay = `${index * 100}ms`;
+              }
+            }
+
+            target.classList.add("is-visible");
+            revealObserver.unobserve(target); // One-time trigger
           }
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
     );
 
     const timeoutId = setTimeout(() => {
-      const elements = document.querySelectorAll(
-        '[data-name*="Section"], [data-name*="Card"], [data-name*="Grid"], [data-name*="Container"]'
-      );
+      // Elements to animate
+      const selectors = [
+        'h1', 'h2', 'h3', 'h4', 
+        'p:not(footer p)', 
+        'button:not(nav button)', 
+        'a.button', 
+        'img:not(nav img)',
+        '[data-name*="Card"]', 
+        '[data-name*="Item"]',
+        '.reveal-target'
+      ];
       
+      const elements = document.querySelectorAll(selectors.join(', '));
       const hashId = location.hash ? location.hash.replace('#', '') : null;
 
       elements.forEach((el) => {
-        const hasStaticOpacity = Array.from(el.classList).some(
-          (c) => c.startsWith("opacity-") && c !== "opacity-0" && c !== "opacity-100"
-        );
-        
-        // Skip hidden classes if this is the target of the hash
+        // Skip elements in the header/nav to avoid breaking layout or UX
+        if (el.closest('nav')) return;
+
+        // Force visibility if this is the target of a hash
         if (hashId && (el.id === hashId || el.querySelector(`#${hashId}`))) {
-          el.classList.add("opacity-100", "translate-y-0");
+          el.classList.add("is-visible");
           return;
         }
 
-        if (!el.classList.contains("scroll-animated") && !hasStaticOpacity) {
-          // Add Tailwind transition classes. Using transforming vars prevents overriding layout transforms.
-          el.classList.add(
-            "scroll-animated",
-            "transition-all",
-            "duration-1000",
-            "ease-out",
-            "opacity-0",
-            "translate-y-10"
-          );
-          observer.observe(el);
+        if (!el.classList.contains("is-visible")) {
+          el.classList.add("reveal-element");
+          revealObserver.observe(el);
         }
       });
 
-      // Handle hash scroll AFTER initial mount and tiny delay
+      // Special handling for hash scroll
       if (hashId) {
         const element = document.getElementById(hashId);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
-          // Ensure it's visible even if it didn't match the selector above
-          element.classList.remove("opacity-0", "translate-y-10");
-          element.classList.add("opacity-100", "translate-y-0");
+          element.classList.add("is-visible");
         }
       }
-    }, 150);
+    }, 200);
 
     return () => {
       clearTimeout(timeoutId);
-      observer.disconnect();
+      revealObserver.disconnect();
     };
   }, [location.pathname, location.hash]);
 

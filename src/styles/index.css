@@ -3,7 +3,33 @@
 @import './theme.css';
 
 html {
-  scroll-behavior: smooth;
+  /* Lenis handles scrolling, so we disable native smooth scroll */
+  scroll-behavior: auto !important;
+}
+
+/* --- Reveal Animations --- */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
+}
+
+.reveal-element.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-element {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  html {
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Ensure sections have enough margin when scrolled to via hash links */
