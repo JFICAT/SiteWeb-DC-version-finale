@@ -7,12 +7,16 @@ const plan = {
   title: "Sérénité Collectivité",
   subtitle: "Protection maximale",
   monthlyPrice: 950,
-  stripeLink: "https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30", // Using contact link as placeholder if no stripe link provided
+  stripeLink: "https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30",
   ctaLabel: "Choisir Sérénité Collectivité",
   features: [
-    "Toutes les fonctionnalités du pack Sérénité",
+    "Nomination officielle du DPO auprès de la CNIL",
+    "Mise à disposition d'un logiciel de pilotage conformité",
+    "Tenue complète et permanente de vos registres obligatoires",
+    "Appui juridique et technique continu",
+    "Veille juridique et technique permanente",
     "Conduite du plan cybersécurité et conformité avancée",
-    "Présentiel dans l'entreprise",
+    "Présentiel dans la collectivité",
     "Rédaction de PSSI, PRA, PCA, Chartes",
     "Évaluation de l'usage de l'intelligence artificielle",
     "2 sensibilisations d'équipes / an",
@@ -46,42 +50,42 @@ export default function TarifsCollectivitesPage({ onNavigate }: { onNavigate?: (
       </div>
 
       {/* Main Content */}
-      <div className="max-w-[1000px] mx-auto px-8 pb-32">
+      <div className="max-w-[1000px] mx-auto px-8 pb-24">
         <div className="flex justify-center">
           <div 
-            className="w-full max-w-[600px] relative flex flex-col rounded-[32px] overflow-hidden border border-[#0047BA]/10 shadow-[0_32px_64px_-16px_rgba(0,71,186,0.08)] bg-white"
+            className="w-full max-w-[540px] relative flex flex-col rounded-[28px] overflow-hidden border border-[#0047BA]/10 ring-2 ring-[#82E600] shadow-[0_32px_64px_-16px_rgba(130,230,0,0.2)] bg-white"
           >
             {/* Top accent bar */}
-            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#0047BA] to-[#00A9C1]" />
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#00A9C1] to-[#82E600]" />
 
-            <div className="p-10 lg:p-12">
-              <div className="flex justify-between items-start mb-8">
+            <div className="p-8 lg:p-10">
+              <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[32px] text-[#0A192F] mb-2">
+                  <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[28px] text-[#0A192F] mb-1">
                     {plan.title}
                   </h2>
-                  <p className="font-['Inter:Regular',sans-serif] text-[#5A6C7D] text-[15px]">
+                  <p className="font-['Inter:Regular',sans-serif] text-[#5A6C7D] text-[14px]">
                     {plan.subtitle}
                   </p>
                 </div>
-                <div className="bg-[#82E600]/10 text-[#2D5A00] text-[12px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">
+                <div className="bg-[#82E600]/10 text-[#2D5A00] text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                   Premium
                 </div>
               </div>
 
               {/* Price */}
-              <div className="flex items-end gap-2 mb-10">
-                <span className="font-['Manrope:Extra_Bold',sans-serif] text-[64px] leading-none text-[#0A192F]">
+              <div className="flex items-end gap-2 mb-8">
+                <span className="font-['Manrope:Extra_Bold',sans-serif] text-[52px] leading-none text-[#0A192F]">
                   {plan.monthlyPrice}€
                 </span>
-                <span className="text-[#5A6C7D] font-['Inter:Medium',sans-serif] text-[18px] mb-3">
+                <span className="text-[#5A6C7D] font-['Inter:Medium',sans-serif] text-[16px] mb-2">
                   / mois HT
                 </span>
               </div>
 
               <a
                 href={plan.stripeLink}
-                className="block w-full py-[18px] rounded-[16px] font-['Inter:Semi_Bold',sans-serif] text-[18px] text-center no-underline transition-all duration-300 cursor-pointer bg-[#0A192F] text-white hover:bg-[#0047BA] hover:shadow-xl hover:-translate-y-0.5"
+                className="block w-full py-[16px] rounded-[14px] font-['Inter:Semi_Bold',sans-serif] text-[16px] text-center no-underline transition-all duration-300 cursor-pointer bg-[#0A192F] text-white hover:bg-[#0047BA] hover:shadow-lg hover:-translate-y-0.5"
               >
                 {plan.ctaLabel}
               </a>
@@ -89,17 +93,17 @@ export default function TarifsCollectivitesPage({ onNavigate }: { onNavigate?: (
 
             <div className="h-px w-full bg-gradient-to-r from-transparent via-[#0047BA]/10 to-transparent" />
 
-            <div className="p-10 lg:p-12 bg-[#F8FAFC]">
-              <p className="font-['Inter:Semi_Bold',sans-serif] text-[#0A192F] text-[13px] uppercase tracking-widest mb-8">
+            <div className="p-8 lg:p-10 bg-[#F8FAFC]">
+              <p className="font-['Inter:Semi_Bold',sans-serif] text-[#0A192F] text-[12px] uppercase tracking-widest mb-6">
                 Inclus dans votre accompagnement :
               </p>
-              <ul className="grid grid-cols-1 gap-5">
+              <ul className="grid grid-cols-1 gap-4">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-4">
-                    <div className="shrink-0 w-6 h-6 rounded-full bg-white border border-[#00A9C1]/20 flex items-center justify-center mt-0.5 shadow-sm">
-                      <CheckCircle2 className="w-4 h-4 text-[#00A9C1]" />
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="shrink-0 w-5 h-5 rounded-full bg-white border border-[#00A9C1]/20 flex items-center justify-center mt-0.5 shadow-sm">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#00A9C1]" />
                     </div>
-                    <span className="font-['Inter:Regular',sans-serif] text-[15px] text-[#42526E] leading-relaxed">
+                    <span className="font-['Inter:Regular',sans-serif] text-[14px] text-[#42526E] leading-relaxed">
                       {feature}
                     </span>
                   </li>
