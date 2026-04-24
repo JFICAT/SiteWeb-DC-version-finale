@@ -1,6 +1,7 @@
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
 import { Navbar, Footer } from "../App";
+import applicationImage from "../assets/application.jpg";
 
 const plan = {
   id: "serenite-collectivite",
@@ -14,10 +15,11 @@ const plan = {
     "Mise à disposition d'un logiciel de pilotage conformité",
     "Tenue complète et permanente de vos registres obligatoires",
     "Appui juridique et technique continu",
-    "Veille juridique et technique permanente",
+    "Veille, appuis juridique et technique continus",
     "Conduite du plan cybersécurité et conformité avancée",
     "Présentiel dans la collectivité",
-    "Rédaction de PSSI, PRA, PCA, Chartes",
+    "Rédaction de politiques de sécurité (PSSI, PRA, PCA)",
+    "Chartes informatique, intelligence artificielle, télétravail",
     "Évaluation de l'usage de l'intelligence artificielle",
     "2 sensibilisations d'équipes / an",
     "Simulations de phishing et tests d'ingénierie sociale",
@@ -50,42 +52,43 @@ export default function TarifsCollectivitesPage({ onNavigate }: { onNavigate?: (
       </div>
 
       {/* Main Content */}
-      <div className="max-w-[1000px] mx-auto px-8 pb-24">
-        <div className="flex justify-center">
+      <div className="max-w-[1200px] mx-auto px-8 pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[440px_1fr] gap-12 items-start justify-center">
+          {/* Left: Pricing Card */}
           <div 
-            className="w-full max-w-[540px] relative flex flex-col rounded-[28px] overflow-hidden border border-[#0047BA]/10 ring-2 ring-[#82E600] shadow-[0_32px_64px_-16px_rgba(130,230,0,0.2)] bg-white"
+            className="relative flex flex-col rounded-[28px] overflow-hidden border border-[#0047BA]/10 ring-2 ring-[#82E600] shadow-[0_32px_64px_-16px_rgba(130,230,0,0.2)] bg-white"
           >
             {/* Top accent bar */}
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#00A9C1] to-[#82E600]" />
 
-            <div className="p-8 lg:p-10">
+            <div className="p-8 lg:p-9">
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[28px] text-[#0A192F] mb-1">
+                  <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-[26px] text-[#0A192F] mb-1">
                     {plan.title}
                   </h2>
-                  <p className="font-['Inter:Regular',sans-serif] text-[#5A6C7D] text-[14px]">
+                  <p className="font-['Inter:Regular',sans-serif] text-[#5A6C7D] text-[13px]">
                     {plan.subtitle}
                   </p>
                 </div>
-                <div className="bg-[#82E600]/10 text-[#2D5A00] text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                <div className="bg-[#82E600]/10 text-[#2D5A00] text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                   Premium
                 </div>
               </div>
 
               {/* Price */}
               <div className="flex items-end gap-2 mb-8">
-                <span className="font-['Manrope:Extra_Bold',sans-serif] text-[52px] leading-none text-[#0A192F]">
+                <span className="font-['Manrope:Extra_Bold',sans-serif] text-[48px] leading-none text-[#0A192F]">
                   {plan.monthlyPrice}€
                 </span>
-                <span className="text-[#5A6C7D] font-['Inter:Medium',sans-serif] text-[16px] mb-2">
+                <span className="text-[#5A6C7D] font-['Inter:Medium',sans-serif] text-[15px] mb-2">
                   / mois HT
                 </span>
               </div>
 
               <a
                 href={plan.stripeLink}
-                className="block w-full py-[16px] rounded-[14px] font-['Inter:Semi_Bold',sans-serif] text-[16px] text-center no-underline transition-all duration-300 cursor-pointer bg-[#0A192F] text-white hover:bg-[#0047BA] hover:shadow-lg hover:-translate-y-0.5"
+                className="block w-full py-[15px] rounded-[12px] font-['Inter:Semi_Bold',sans-serif] text-[15px] text-center no-underline transition-all duration-300 cursor-pointer bg-[#0A192F] text-white hover:bg-[#0047BA] hover:shadow-lg hover:-translate-y-0.5"
               >
                 {plan.ctaLabel}
               </a>
@@ -93,22 +96,56 @@ export default function TarifsCollectivitesPage({ onNavigate }: { onNavigate?: (
 
             <div className="h-px w-full bg-gradient-to-r from-transparent via-[#0047BA]/10 to-transparent" />
 
-            <div className="p-8 lg:p-10 bg-[#F8FAFC]">
-              <p className="font-['Inter:Semi_Bold',sans-serif] text-[#0A192F] text-[12px] uppercase tracking-widest mb-6">
+            <div className="p-8 lg:p-9 bg-[#F8FAFC]">
+              <p className="font-['Inter:Semi_Bold',sans-serif] text-[#0A192F] text-[11px] uppercase tracking-widest mb-6">
                 Inclus dans votre accompagnement :
               </p>
               <ul className="grid grid-cols-1 gap-4">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <div className="shrink-0 w-5 h-5 rounded-full bg-white border border-[#00A9C1]/20 flex items-center justify-center mt-0.5 shadow-sm">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#00A9C1]" />
+                      <CheckCircle2 className="w-3 h-3 text-[#00A9C1]" />
                     </div>
-                    <span className="font-['Inter:Regular',sans-serif] text-[14px] text-[#42526E] leading-relaxed">
+                    <span className="font-['Inter:Regular',sans-serif] text-[13px] text-[#42526E] leading-relaxed">
                       {feature}
                     </span>
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+
+          {/* Right: Pilotage Digital Section */}
+          <div className="flex flex-col gap-8 pt-4">
+            <div className="bg-[#F0F7FF] rounded-[32px] p-8 lg:p-12 border border-[#0047BA]/5 relative overflow-hidden">
+              {/* Decorative background element */}
+              <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#82E600]/5 rounded-full blur-3xl" />
+              
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#0047BA]/10 mb-6 shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-[#82E600] animate-pulse" />
+                  <span className="font-['Inter:Semi_Bold',sans-serif] text-[#0A192F] text-[12px] uppercase tracking-widest">
+                    Digitalisation & Accountability
+                  </span>
+                </div>
+                
+                <h3 className="font-['Manrope:Extra_Bold',sans-serif] text-[32px] text-[#0A192F] leading-tight mb-4">
+                  Pilotage Digital & Accountability<br />
+                  <span className="text-[#00A9C1]">Votre Conformité RGPD en Temps Réel</span>
+                </h3>
+                
+                <p className="font-['Inter:Regular',sans-serif] text-[#5A6C7D] text-[17px] leading-relaxed max-w-[540px] mb-8">
+                  Votre tableau de bord intelligent centralise et simplifie le pilotage de votre conformité. Accédez à vos registres, gérez vos sous-traitants et suivez vos plans d'action en un clic.
+                </p>
+
+                <div className="rounded-[20px] overflow-hidden shadow-2xl border border-white/50 bg-white p-2">
+                  <img 
+                    src={applicationImage} 
+                    alt="Application Pilotage Digital" 
+                    className="w-full h-auto rounded-[14px]"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
