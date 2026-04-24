@@ -12,6 +12,7 @@ import Body from "../imports/Body";
 import IAConformePage from "./components/IAConformePage";
 import ContactPage from "./components/ContactPage";
 import TarifsPage from "./components/TarifsPage";
+import TarifsCollectivitesPage from "./components/TarifsCollectivitesPage";
 import HomePage from "./pages/HomePage";
 import NewsPage from "./pages/NewsPage";
 import Fabrik01Page from "./pages/Fabrik01Page";
@@ -553,6 +554,7 @@ export default function App() {
       <Route path="/trust-center" element={<TrustCenterPage onNavigate={handleNavigate} />} />
       <Route path="/contact" element={<ContactPage onNavigate={handleNavigate} />} />
       <Route path="/tarifs" element={<TarifsPage onNavigate={handleNavigate} />} />
+      <Route path="/tarifs-collectivites" element={<TarifsCollectivitesPage onNavigate={handleNavigate} />} />
       <Route path="/news" element={<NewsPage onNavigate={handleNavigate} />} />
       <Route path="*" element={<HomePage onNavigate={handleNavigate} />} />
     </Routes>
