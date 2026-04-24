@@ -53,8 +53,40 @@ export default function TarifsCollectivitesPage({ onNavigate }: { onNavigate?: (
 
       {/* Main Content */}
       <div className="max-w-[1200px] mx-auto px-8 pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-[440px_1fr] gap-12 items-start justify-center">
-          {/* Left: Pricing Card */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_440px] gap-16 items-start justify-center">
+          
+          {/* Left: Pilotage Digital Section */}
+          <div className="flex flex-col gap-8 pt-4">
+            <div className="relative overflow-hidden">
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F0F7FF] border border-[#0047BA]/10 mb-6 shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-[#82E600] animate-pulse" />
+                  <span className="font-['Inter:Semi_Bold',sans-serif] text-[#0A192F] text-[12px] uppercase tracking-widest">
+                    Digitalisation & Accountability
+                  </span>
+                </div>
+                
+                <h3 className="font-['Manrope:Extra_Bold',sans-serif] text-[36px] lg:text-[42px] text-[#0A192F] leading-tight mb-6">
+                  Pilotage Digital & Accountability<br />
+                  <span className="text-[#00A9C1]">Votre Conformité RGPD en Temps Réel</span>
+                </h3>
+                
+                <p className="font-['Inter:Regular',sans-serif] text-[#5A6C7D] text-[18px] leading-relaxed max-w-[600px] mb-10">
+                  Votre tableau de bord intelligent centralise et simplifie le pilotage de votre conformité. Accédez à vos registres, gérez vos sous-traitants et suivez vos plans d'action en un clic.
+                </p>
+
+                <div className="rounded-[24px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 bg-white p-2">
+                  <img 
+                    src={applicationImage} 
+                    alt="Application Pilotage Digital" 
+                    className="w-full h-auto rounded-[18px]"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Pricing Card */}
           <div 
             className="relative flex flex-col rounded-[28px] overflow-hidden border border-[#0047BA]/10 ring-2 ring-[#82E600] shadow-[0_32px_64px_-16px_rgba(130,230,0,0.2)] bg-white"
           >
@@ -112,40 +144,6 @@ export default function TarifsCollectivitesPage({ onNavigate }: { onNavigate?: (
                   </li>
                 ))}
               </ul>
-            </div>
-          </div>
-
-          {/* Right: Pilotage Digital Section */}
-          <div className="flex flex-col gap-8 pt-4">
-            <div className="bg-[#F0F7FF] rounded-[32px] p-8 lg:p-12 border border-[#0047BA]/5 relative overflow-hidden">
-              {/* Decorative background element */}
-              <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#82E600]/5 rounded-full blur-3xl" />
-              
-              <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#0047BA]/10 mb-6 shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-[#82E600] animate-pulse" />
-                  <span className="font-['Inter:Semi_Bold',sans-serif] text-[#0A192F] text-[12px] uppercase tracking-widest">
-                    Digitalisation & Accountability
-                  </span>
-                </div>
-                
-                <h3 className="font-['Manrope:Extra_Bold',sans-serif] text-[32px] text-[#0A192F] leading-tight mb-4">
-                  Pilotage Digital & Accountability<br />
-                  <span className="text-[#00A9C1]">Votre Conformité RGPD en Temps Réel</span>
-                </h3>
-                
-                <p className="font-['Inter:Regular',sans-serif] text-[#5A6C7D] text-[17px] leading-relaxed max-w-[540px] mb-8">
-                  Votre tableau de bord intelligent centralise et simplifie le pilotage de votre conformité. Accédez à vos registres, gérez vos sous-traitants et suivez vos plans d'action en un clic.
-                </p>
-
-                <div className="rounded-[20px] overflow-hidden shadow-2xl border border-white/50 bg-white p-2">
-                  <img 
-                    src={applicationImage} 
-                    alt="Application Pilotage Digital" 
-                    className="w-full h-auto rounded-[14px]"
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </div>
